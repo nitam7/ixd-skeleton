@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<a href = "/">Home</a>
+		<title>Diary</title>
+		<center>
+			<h1>Diary</h1>
+	</head>
+<body>
+		<img src="FocusFriend/ixd-skeleton/images/searchbar.png" />
+	<p>search bar goes here</p>
+	{{#each diaries}}
+	<div class ="entry" id="{{id}}">
+		<a href = "#">{{diaryName}}  |  {{date}}</a>
+		<br />
+		<br />
+	</div>
+	{{/each}}
+	</center>
+</body>
+</html>
+
