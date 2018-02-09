@@ -7,12 +7,12 @@
 	</head>
 <body>
 		<img src="FocusFriend/ixd-skeleton/images/searchbar.png" />
-	<div class ="entry">
-		<p>search bar goes here</p>
-		<p><a href = "#">1/15/18  |  Title 1</a></p>
-		<p><a href = "#">1/14/18  |  Title 2</a></p>
-		<p><a href = "#">1/12/18  |  Title 3</a></p>
+	<p>search bar goes here</p>
+	{{#each diaries}}
+	<div class ="entry" id="{{id}}">
+		<a href = "entry">{{name}}  |  {{date}}</a>
 	</div>
+	{{/each}}
 	</center>
 </body>
 </html>
