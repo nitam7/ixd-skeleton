@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<a href = "index.handlebars">Home</a>
+		<a href = "/">Home</a>
 		<title>Diary</title>
 		<center>
 			<h1>Diary</h1>
@@ -10,7 +10,9 @@
 	<p>search bar goes here</p>
 	{{#each diaries}}
 	<div class ="entry" id="{{id}}">
-		<a href = "entry">{{name}}  |  {{date}}</a>
+		<a href = "#">{{diaryName}}  |  {{date}}</a>
+		<br />
+		<br />
 	</div>
 	{{/each}}
 	</center>
