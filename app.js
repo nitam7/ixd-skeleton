@@ -13,7 +13,7 @@ var index = require('./routes/index');
 // var user = require('./routes/user');
 var diary = require('./routes/diary');
 var options = require('./routes/options');
-
+var play = require('./routes/play');
 var app = express();
 
 // all environments
@@ -39,6 +39,7 @@ if ('development' == app.get('env')) {
 app.get('/', index.view);
 app.get('/diary', diary.view);
 app.get('/options', options.view);
+app.get('/play', play.view);
 // Example route
 // app.get('/users', user.list);
 
