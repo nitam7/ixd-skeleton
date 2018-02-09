@@ -14,6 +14,7 @@ var index = require('./routes/index');
 var diary = require('./routes/diary');
 var options = require('./routes/options');
 var play = require('./routes/play');
+var entry = require('./routes/entry');
 var app = express();
 
 // all environments
@@ -40,6 +41,7 @@ app.get('/', index.view);
 app.get('/diary', diary.view);
 app.get('/options', options.view);
 app.get('/play', play.view);
+app.get('/entry', entry.view);
 // Example route
 // app.get('/users', user.list);
 
