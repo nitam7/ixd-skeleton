@@ -1,0 +1,67 @@
+html, body{
+	width: 100%;
+	height: 100%;
+}
+
+@font-face {
+	font-family: Dolce Vita;
+	src: url(Dolce Vita.tff);
+	font-family: Roboto-LightItalic;
+	src: url(Roboto-LightItalic.tff);
+}
+
+body {
+	background: linear-gradient(to bottom, rgba(39,40,56,0), rgba(39,40,56,1));
+	background-size: 100%;
+	background-attachment:fixed;
+	font-family: Roboto-LightItalic;
+}
+
+.container a {
+	font-size: 1.5em;
+	text-decoration: none;
+	color: #272838;
+}
+
+.container h1{
+	font-family: Dolce Vita;
+	font-size: 4em;
+}
+
+.searchbar {
+	width: 100%;
+	position: relative;
+}
+
+.searchInput {
+	width: 50%;
+	border: 2px solid #E9C46A;
+	color: #272838;
+	padding: 10px;
+	height: 36px;
+	border-radius: 10px;
+	outline: none;
+}
+
+.searchInput:focus {
+	color:#272838;
+}
+
+.searchButton {
+	position: absolute;
+	width: 40px;
+	height: 36px;
+	border: 1px solid #E9C46A;
+	background: #E9C46A;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 10px;
+	outline: none;
+}
+
+.searchWrap {
+	width: 30%;
+	top: 50%;
+	left: 50%;
+	transform: tarnslate (-50%, -50%);
+}
