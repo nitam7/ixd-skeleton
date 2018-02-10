@@ -23,6 +23,10 @@ body {
 	color: #272838;
 }
 
+.container a:hover {
+	color: #FBF5F3;
+}
+
 .container h1{
 	font-family: Dolce Vita;
 	font-size: 4em;
