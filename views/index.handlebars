@@ -15,22 +15,16 @@
 	<body>
 	
 		<a href ="./diary">Diary</a>
-
 		<p>
 			<a href ="./play">Play</a>
 		</p>
-
 		<p id="demo"></p>
-
-
-
 
 <script>
 
 var lastClick = 0;
 var timeSince = 0;
 var isActive = false;
-
 
 //for all events
 //$('*').on('blur change click dblclick error focus focusin focusout hover keydown keypress keyup load mousedown mouseenter mouseleave mousemove mouseout mouseover mouseup resize scroll select submit', function() {
@@ -40,9 +34,9 @@ function howlong() {
 }
 
 
-// tests if it has been 15 seconds since the user has been on there phone, and the reason for not in focus is lock screen (40 sec for me)
+// tests if it has been 15 seconds since the user has been on their phone, and the reason for not in focus is lock screen (40 sec for me)
 function isActive()	{
-	//if not in focus, but there active, its there fault
+	//if not in focus, but theyr active, its their fault
     if (timeSince < 15000) {
   		isActive = true;
   	}
@@ -51,11 +45,6 @@ function isActive()	{
   		isActive = false;
   	}
 }
-
-    //test if user is active. if not active and loses focus, lock screen has turned on and they shouldn't be penalized
-
-//if they have been active within last 30 secoonds
-
 
 setInterval("myFunction()", 3000);
 
@@ -67,7 +56,6 @@ $("body").click(function () {
     isActive = true;
 });
 	
-
     var x = document.getElementById("demo");
     //shouln't affect timeout
     if (document.hasFocus()) {
@@ -76,17 +64,15 @@ $("body").click(function () {
     }
     // doc is not in focus and has been touching 
     else {
+    	x.innerHTML = timeSince;
     	howlong();
-		//isActive();
     	//if docs not in focus and theyre active its not timeout, its them
-    	if (isActive == true) {
-	  		document.write("timeSince: " + timeSince);
-  		}
+    	//if (isActive == true) {
+	  	document.write("timeSince: " + timeSince);
+  		//}
     }
 }
 </script>
-
-
 </center>
 
 
