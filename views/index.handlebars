@@ -15,8 +15,6 @@
 	<body>
 	
 		<a href ="./diary">Diary</a>
-	
-	
 
 		<p>
 			<a href ="./play">Play</a>
@@ -25,14 +23,16 @@
 		<p id="demo"></p>
 
 <script>
-setInterval("myFunction()", 1);
+setInterval("myFunction()", 10);
 
 function myFunction() {
     var x = document.getElementById("demo");
     if (document.hasFocus()) {
         x.innerHTML = "The document has focus.";
     } else {
-        x.innerHTML = "The document DOES NOT have focus.";
+        x.innerHTML = "The document DOES NOT have focus, added another house image to.";
+  		document.write("oops");
+  		console.log("Page lost focus");
     }
 }
 </script>
