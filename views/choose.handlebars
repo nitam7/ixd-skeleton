@@ -7,6 +7,15 @@
 		<title>FocusFriend</title>
 		<center>
 			<h1>Choose your Spirit Animal:</h1>
+			{{#each animals}}
+				<div class = "animal">
+					<h3>{{species}}</h3>
+					<a href="#"><img src ="{{imageURL}}" /></a>
+					<p>{{description}}</p>
+					<br>
+					<br>
+				</div>
+			{{/each}}
 	</head>
 <body>
 </body>

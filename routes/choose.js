@@ -1,3 +1,8 @@
+//importing all the animals
+
+var data = require("../data.json");
+
 exports.view = function(req, res){
-  res.render('choose');
+	console.log(data);
+  	res.render('choose', data);
 };

@@ -2,27 +2,43 @@
 	"animals": [
 		{
 			"species": "Dog",
-			"description": "Man's best friend"
+			"description": "Man's best friend",
+			"imageURL": "./images/cogs 120 dog.png" 
 		},
 		{
 			"species": "Cat",
-			"description": "Loves you--sometimes"
+			"description": "Loves you--sometimes",
+			"imageURL": ""
 		},
 		{
 			"species": "Bear",
-			"description": "Always wants to cuddle"
+			"description": "Always wants to cuddle",
+			"imageURL": "/images/cogs 120 bear.png"
 		},
 		{
 			"species": "Bird",
-			"description": "Loves to sing songs"
+			"description": "Loves to sing songs",
+			"imageURL": ""
 		},
 		{
 			"species": "Hamster",
-			"description": "Hides food in underground tunnels"
+			"description": "Hides food in underground tunnels",
+			"imageURL": ""
 		},
 		{
 			"species": "Guinea Pig",
-			"description": "Glorified rodent that loves lettuce"
+			"description": "Glorified rodent that loves lettuce",
+			"imageURL": ""
+		},
+		{
+			"species": "Pig",
+			"description": "Oink oink!",
+			"imageURL": "/images/cogs 120 pig.png"
+		},
+		{
+			"species": "Tiger",
+			"description": "Rawr!",
+			"imageURL": "/images/cogs 120 tiger.png"
 		}
 	]
 }
