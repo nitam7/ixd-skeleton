@@ -8,12 +8,28 @@
 		<title>FocusFriend</title>
 		<center>
 			<h1>Play with your animal for:</h1>
+			<!-- we should put their chosen animal var here later -->
+			<img id="image" src="images/happy1.png" alt="MISSING CHARACTER PNG" > <br> 
 	</head>
 	<body>
 			<button onclick ="completeTask()">Complete</button>
 
 			<!-- timer implemented below -->
 			<script>
+
+				var image=document.getElementById("image");
+			    var currentPos = 0;
+			    //add ,"" to cycle through all images
+			    var images = ["images/happy2.png"]
+
+			    function foto() {
+			        if (++currentPos >= images.length) currentPos = 0;
+			        image.src = images[currentPos];
+			    }
+			    //about 10 second. will change to half hour after test
+			    setInterval(foto, 10000);
+
+
 				function completeTask (){
 				setTimeout(function(){ alert("Good job!"); }, 3000);
 				}
