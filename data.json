@@ -1,0 +1,28 @@
+{
+	"animals": [
+		{
+			"species": "Dog",
+			"description": "Man's best friend"
+		},
+		{
+			"species": "Cat",
+			"description": "Loves you--sometimes"
+		},
+		{
+			"species": "Bear",
+			"description": "Always wants to cuddle"
+		},
+		{
+			"species": "Bird",
+			"description": "Loves to sing songs"
+		},
+		{
+			"species": "Hamster",
+			"description": "Hides food in underground tunnels"
+		},
+		{
+			"species": "Guinea Pig",
+			"description": "Glorified rodent that loves lettuce"
+		}
+	]
+}
