@@ -1,15 +1,56 @@
+<!DOCTYPE HTML>
 <html>
 	<head>
-		<a href = "/">Home</a>
-		<a href ="/"><i class ="fa fa-home fa-2x"></i></a>
-		<title>Diary</title>
-		<center>
-			<h1>Diary Entry</h1>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>FocusFriend</title>
+
+		<style type="text/css">
+
+		</style>
 	</head>
 	<body>
-			<img src="images/searchbar.png" />
-		<p>Title of Entry</p>
-			<a href ="./diary">Diary</a>
-		</center>
+<script src="/js/highcharts.js"></script>
+<script src="/js/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+
+		<script type="text/javascript">
+
+Highcharts.chart('container', {
+{{#each productivity}}
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: '{{date}}'
+    },
+    subtitle: {
+        text: 'Productivity Levels'
+    },
+    xAxis: {
+        categories: '{{xaxis}}'
+    yAxis: {
+        title: {
+            text: 'Percentage'
+        }
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+    series: [{
+        name: 'Hours',
+        data: '{{series}}'
+    }]
+});
+{{/each}}
+		</script>
 	</body>
 </html>
