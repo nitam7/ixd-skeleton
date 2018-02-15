@@ -1,0 +1,10 @@
+{
+	"animals": [
+
+		{
+			"species": "Dog",
+			"description": "Man's best friend",
+			"imageURL": "./images/DogHouse.png" 
+		}
+	]
+}

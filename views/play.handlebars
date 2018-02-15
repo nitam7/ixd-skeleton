@@ -10,7 +10,11 @@
 			<h1>Focus Together!</h1>
 			<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 			<!-- we should put their chosen animal var here later -->
-			<img id="image" src="./images/happy1.png" alt="MISSING CHARACTER PNG" > <br> 
+
+			{{#with animals.[0]}}
+			<a id="images"><img src ="{{imageURL}}"/></a>
+			{{/with}}
+			<!--<img id="image" src="./images/happy1.png" alt="MISSING CHARACTER PNG" > <br> -->
 	</head>
 	<body>
 
@@ -61,12 +65,12 @@
 				var image=document.getElementById("image");
 			    var currentPos = 0;
 			    //add ,"" to cycle through all images
-			    var images = ["./images/happy2.png"]
+			    var images = ["./images/Happy2.png"]
 
-			    var images = ["./images/happy2.png"]
+
 			    var hasBeenSad;
 
-			    var images = ["./images/happy2.png"]
+	
 
 			    function fotoGood() {
 			        if (++currentPos >= images.length) currentPos = 0;

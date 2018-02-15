@@ -1,0 +1,26 @@
+{
+	"animals": [
+
+		{
+			"species": "Dog",
+			"description": "Man's best friend",
+			"imageURL": "./images/Happy1.png" 
+		},
+
+		{
+			"species": "Dog",
+			"description": "Man's best friend",
+			"imageURL": "./images/Happy1.png" 
+		},
+		{
+			"species": "Dog",
+			"description": "Man's best friend",
+			"imageURL": "/images/Happy3.png"
+		},
+		{
+			"species": "Dog",
+			"description": "Man's best friend",
+			"imageURL": "/images/Sad.png"
+		},
+	]
+}
