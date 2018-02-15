@@ -9,15 +9,12 @@
 			<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 			
 			<a href ="./options"><i class="fas fa-cog fa-fw" style="background:MistyRose"></i></a>
-			
-			<!--<div class = "animal">
-					
-					<a href="./nameFriend"><img src ="{{imageURL}}" /></a>
-					<p>{{description}}</p>
-					<br>
-					<br>
-			</div>-->
-			<img id="image" src="/images/cogs 120 bear.PNG" alt="MISSING CHARACTER PNG" > <br> 
+
+			{{#with animals.[0]}}
+			<a><img src ="{{imageURL}}"/></a>
+			{{/with}}
+
+			<!--<img id="image" src="/images/cogs 120 bear.PNG" alt="MISSING CHARACTER PNG" > <br> -->
 	</head>
 	<body>
 	 <a href ="./welcome">welcome test</a>
@@ -33,10 +30,12 @@
 	var image=document.getElementById("image");
     var currentPos = 0;
     var images = ["./images/cogs 120 tiger.PNG","./images/cogs 120 pig.PNG","./images/cogs 120 dog.PNG"]
+    
 
     function foto() {
         if (++currentPos >= images.length) currentPos = 0;
         image.src = images[currentPos];
+    
     }
 
     setInterval(foto, 3000);

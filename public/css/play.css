@@ -4,21 +4,18 @@ html, body{
 }
 
 @font-face {
-	font-family: Dolce Vita;
-	src: url(Dolce Vita.tff);
-	font-family: Roboto-LightItalic;
-	src: url(Roboto-LightItalic.tff);
+	font-family: CaviarDreams;
+	src: url(./fonts/CaviarDreams.tff);
 }
 
 body {
 	background: linear-gradient(to bottom, rgba(39,40,56,0), rgba(39,40,56,1));
 	background-size: 100%;
 	background-attachment:fixed;
-	font-family: Roboto-LightItalic;
 }
 
 .container a {
-	font-size: 1.5em;
+	font-size: 2.5em;
 	text-decoration: none;
 	color: #272838;
 }
@@ -28,6 +25,22 @@ body {
 }
 
 .container h1{
-	font-family: Dolce Vita;
+	font-family: CaviarDreams;
 	font-size: 4em;
+}
+
+/*this is for progress bar*/
+
+#userProgress {
+	width: 70%;
+}
+
+#progressBar {
+	width: 1%;
+	height: 30px;
+	background-color: #E9C46A;
+	text-align: center;
+	line-height: 30px;
+	float:left;
+	color: #2722838;
 }
