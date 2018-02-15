@@ -16,6 +16,11 @@ var diary = require('./routes/diary');
 var options = require('./routes/options');
 var play = require('./routes/play');
 var entry = require('./routes/entry');
+var welcome = require('./routes/welcome');
+var login = require('./routes/login');
+var nameFriend = require('./routes/nameFriend');
+var playTime = require('./routes/playTime');
+
 var app = express();
 
 // all environments

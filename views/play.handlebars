@@ -9,7 +9,7 @@
 		<a href ="/"><i class ="fa fa-home fa-2x"></i></a>
 		<title>FocusFriend</title>
 		<center>
-			<h1>Play with your animal for:</h1>
+			<h1>Focus Together!</h1>
 			<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 			<!-- we should put their chosen animal var here later -->
 			<img id="image" src="images/happy1.png" alt="MISSING CHARACTER PNG" > <br> 
@@ -32,9 +32,10 @@
 
 			    function fotoSad() {
 			        image.src = "images/Sad.png";
+			        hasBeenSad = true;
 			    }
-			    //about 10 second. will change to half hour after test
-			    setInterval(fotoGood, 10000);
+			    //about 5 second. will change to half hour after test
+			    setInterval(fotoGood, 5000);
 
 
 var lastClick = 0;
@@ -64,6 +65,27 @@ function isActive(x)	{
 //setInterval("isActive(timeSince)", 10);
 
 
+
+//LINK TO 'GO' BUTTON AFTER TIME IS INPUT. DISABLE ON RETURN TO HOME BUTTON IF FAILED OR TIME UP
+//seems to interfere with the else in hasfocus
+/*var noSleep = new NoSleep();
+
+function enableNoSleep() {
+  noSleep.enable();
+  document.removeEventListener('touchstart', enableNoSleep, false);
+}
+
+// Enable wake lock.
+// (must be wrapped in a user input event handler e.g. a mouse or touch handler)
+document.addEventListener('touchstart', enableNoSleep, false);
+//Once you want to cede control of sleep, simply call the disable method:
+
+// Disable wake lock at some point in the future.
+// (does not need to be wrapped in any user input event handler)
+noSleep.disable();
+*/
+
+
 setInterval("myFunction()", 10);
 
 function myFunction() {
@@ -78,6 +100,12 @@ $("body").click(function () {
     var x = document.getElementById("demo");
     //shouln't affect timeout
     if (document.hasFocus()) {
+    	if (hasBeenSad == true) {
+    		
+    		//find a way to start cycle over.
+    		//also if you add another happy pic you can see that it cycles continueously. must fix
+    	}
+    	//setTimeout({image.src = "images/happy1.png";}
 //setInterval("howlong()", 10);
 //setInterval("isActive(timeSince)", 10);
   //      x.innerHTML = isActive + "because time since is last click is: " + timeSince;
@@ -91,6 +119,7 @@ $("body").click(function () {
 	  	//document.write("timeSince: " + timeSince);
 	  		//document.write("fail");
 	  		fotoSad();
+
   		//}
     }
 }
