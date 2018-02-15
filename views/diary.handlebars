@@ -9,17 +9,6 @@
 			<h1>D i a r y</h1>
 	</head>
 	<body>
-		<div class = "searchWrap">
-			<div class ="searchbar">
-				<input type ="text" class ="searchInput">
-					<button type ="submit" class ="searchButton">
-						<i class ="fa fa-search"></i>
-					</button>
-			</div>
-		</div>
-		<br>
-		<br>
-		<br>
 		{{#each diaries}}
 		<div class ="entry" id="{{id}}">
 			<a href = "./entry">{{diaryName}}     {{date}}</a>
