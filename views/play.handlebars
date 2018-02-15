@@ -25,12 +25,16 @@
 			    //add ,"" to cycle through all images
 			    var images = ["images/happy2.png"]
 
-			    function foto() {
+			    function fotoGood() {
 			        if (++currentPos >= images.length) currentPos = 0;
 			        image.src = images[currentPos];
 			    }
+
+			    function fotoSad() {
+			        image.src = "images/Sad.png";
+			    }
 			    //about 10 second. will change to half hour after test
-			    setInterval(foto, 10000);
+			    setInterval(fotoGood, 10000);
 
 
 var lastClick = 0;
@@ -85,7 +89,8 @@ $("body").click(function () {
     	//if docs not in focus and theyre active its not timeout, its them
     	//if (isActive == true) {
 	  	//document.write("timeSince: " + timeSince);
-	  		document.write("fail");
+	  		//document.write("fail");
+	  		fotoSad();
   		//}
     }
 }
