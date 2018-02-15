@@ -7,34 +7,100 @@
 		<a href ="/"><i class ="fa fa-home fa-2x"></i></a>
 		<title>FocusFriend</title>
 		<center>
-			<h1>Play with your animal for:</h1>
-			<!-- we should put their chosen animal var here later -->
-			<img id="image" src="images/happy1.png" alt="MISSING CHARACTER PNG" > <br> 
+		
+			<h1>Friends Name</h1>
+			<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+			<a href ="/"><i class ="fa fa-home fa-2x"></i></a>
+			<a href ="./options"><i class="fas fa-cog fa-fw" style="background:MistyRose"></i></a>
+		
+			<img id="image" src="images/cogs 120 bear.PNG" alt="MISSING CHARACTER PNG" > <br> 
 	</head>
 	<body>
-			<button onclick ="completeTask()">Complete</button>
+	
+		<a href ="./diary">Diary</a>
+		<p>
+			<a href ="./play">Play</a>
+		</p>
+		<p id="demo"></p>
+		<a href = "./choose">Link to see Choose Animal page</a>
 
-			<!-- timer implemented below -->
-			<script>
+<script>
 
-				var image=document.getElementById("image");
-			    var currentPos = 0;
-			    //add ,"" to cycle through all images
-			    var images = ["images/happy2.png"]
+	var image=document.getElementById("image");
+    var currentPos = 0;
+    var images = ["images/cogs 120 tiger.PNG","images/cogs 120 pig.PNG","images/cogs 120 dog.PNG"]
 
-			    function foto() {
-			        if (++currentPos >= images.length) currentPos = 0;
-			        image.src = images[currentPos];
-			    }
-			    //about 10 second. will change to half hour after test
-			    setInterval(foto, 10000);
+    function foto() {
+        if (++currentPos >= images.length) currentPos = 0;
+        image.src = images[currentPos];
+    }
+
+    setInterval(foto, 3000);
 
 
-				function completeTask (){
-				setTimeout(function(){ alert("Good job!"); }, 3000);
-				}
-			</script>
-		</center>
+var lastClick = 0;
+var timeSince = 0;
+var isActive;
+
+//for all events
+//$('*').on('blur change click dblclick error focus focusin focusout hover keydown keypress keyup load mousedown mouseenter mouseleave mousemove mouseout mouseover mouseup resize scroll select submit', function() {
+
+function howlong() {
+    timeSince = ((new Date()).getTime() - lastClick);
+}
+
+
+// tests if it has been 15 seconds since the user has been on their phone, and the reason for not in focus is lock screen (40 sec for me)
+function isActive()	{
+	//if not in focus, but theyr active, its their fault
+    if (timeSince < 5000) {
+  		isActive = true;
+  	}
+  	//lock screen activates
+  	else if (timeSince > 5000) {
+  		isActive = false;
+  	}
+}
+setInterval("howlong()", 10);
+setInterval("isActive()", 10);
+
+
+setInterval("myFunction()", 10);
+
+function myFunction() {
+
+//whenever you click reset lastclick and user
+$("body").click(function () {
+    lastClick = (new Date()).getTime();
+    isActive = true;
+});
+	
+    var x = document.getElementById("demo");
+    //shouln't affect timeout
+    if (document.hasFocus()) {
+setInterval("howlong()", 10);
+setInterval("isActive()", 10);
+        x.innerHTML = isActive + "because time since is last click is: " + timeSince;
+    }
+    // doc is not in focus and has been touching 
+    else {
+ 
+    	howlong();
+    	//if docs not in focus and theyre active its not timeout, its them
+    	//if (isActive == true) {
+	  	document.write("timeSince: " + timeSince);
+  		//}
+    }
+}
+
+
+
+
+</script>
+</center>
+
+
 	</body>
 	</div>
 </html>
+
