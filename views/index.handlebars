@@ -27,66 +27,12 @@
     var currentPos = 0;
     var images = ["images/cogs 120 tiger.PNG","images/cogs 120 pig.PNG","images/cogs 120 dog.PNG"]
 
-    function volgendefoto() {
+    function foto() {
         if (++currentPos >= images.length) currentPos = 0;
         image.src = images[currentPos];
     }
 
-    setInterval(volgendefoto, 3000);
-
-
-var lastClick = 0;
-var timeSince = 0;
-var isActive = false;
-
-//for all events
-//$('*').on('blur change click dblclick error focus focusin focusout hover keydown keypress keyup load mousedown mouseenter mouseleave mousemove mouseout mouseover mouseup resize scroll select submit', function() {
-
-function howlong() {
-    timeSince = ((new Date()).getTime() - lastClick);
-}
-
-
-// tests if it has been 15 seconds since the user has been on their phone, and the reason for not in focus is lock screen (40 sec for me)
-function isActive()	{
-	//if not in focus, but theyr active, its their fault
-    if (timeSince < 15000) {
-  		isActive = true;
-  	}
-  	//lock screen activates
-  	if (timeSince > 15000) {
-  		isActive = false;
-  	}
-}
-
-setInterval("myFunction()", 3000);
-
-function myFunction() {
-
-
-$("body").click(function () {
-    lastClick = (new Date()).getTime();
-    isActive = true;
-});
-	
-    var x = document.getElementById("demo");
-    //shouln't affect timeout
-    if (document.hasFocus()) {
-        x.innerHTML = "The document has focus.";
-        x.innerHTML = isActive;
-    }
-    // doc is not in focus and has been touching 
-    else {
-    	x.innerHTML = timeSince;
-    	howlong();
-    	//if docs not in focus and theyre active its not timeout, its them
-    	//if (isActive == true) {
-	  	document.write("timeSince: " + timeSince);
-  		//}
-    }
-}
-
-
+    setInterval(foto, 3000);
 
 
 </script>

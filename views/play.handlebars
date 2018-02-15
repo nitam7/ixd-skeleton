@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 	<link href ="/css/play.css" rel ="stylesheet">
@@ -7,35 +9,28 @@
 		<a href ="/"><i class ="fa fa-home fa-2x"></i></a>
 		<title>FocusFriend</title>
 		<center>
-		
-			<h1>Friends Name</h1>
+			<h1>Play with your animal for:</h1>
 			<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-			<a href ="/"><i class ="fa fa-home fa-2x"></i></a>
-			<a href ="./options"><i class="fas fa-cog fa-fw" style="background:MistyRose"></i></a>
-		
-			<img id="image" src="images/cogs 120 bear.PNG" alt="MISSING CHARACTER PNG" > <br> 
+			<!-- we should put their chosen animal var here later -->
+			<img id="image" src="images/happy1.png" alt="MISSING CHARACTER PNG" > <br> 
 	</head>
 	<body>
-	
-		<a href ="./diary">Diary</a>
-		<p>
-			<a href ="./play">Play</a>
-		</p>
-		<p id="demo"></p>
-		<a href = "./choose">Link to see Choose Animal page</a>
 
-<script>
+				<p id="demo"></p>
+			<!-- timer implemented below -->
+			<script>
 
-	var image=document.getElementById("image");
-    var currentPos = 0;
-    var images = ["images/cogs 120 tiger.PNG","images/cogs 120 pig.PNG","images/cogs 120 dog.PNG"]
+				var image=document.getElementById("image");
+			    var currentPos = 0;
+			    //add ,"" to cycle through all images
+			    var images = ["images/happy2.png"]
 
-    function foto() {
-        if (++currentPos >= images.length) currentPos = 0;
-        image.src = images[currentPos];
-    }
-
-    setInterval(foto, 3000);
+			    function foto() {
+			        if (++currentPos >= images.length) currentPos = 0;
+			        image.src = images[currentPos];
+			    }
+			    //about 10 second. will change to half hour after test
+			    setInterval(foto, 10000);
 
 
 var lastClick = 0;
@@ -51,18 +46,18 @@ function howlong() {
 
 
 // tests if it has been 15 seconds since the user has been on their phone, and the reason for not in focus is lock screen (40 sec for me)
-function isActive()	{
+function isActive(x)	{
 	//if not in focus, but theyr active, its their fault
-    if (timeSince < 5000) {
+    if (x < 5000) {
   		isActive = true;
   	}
   	//lock screen activates
-  	else if (timeSince > 5000) {
+  	else if (x > 5000) {
   		isActive = false;
   	}
 }
-setInterval("howlong()", 10);
-setInterval("isActive()", 10);
+//setInterval("howlong()", 10);
+//setInterval("isActive(timeSince)", 10);
 
 
 setInterval("myFunction()", 10);
@@ -73,34 +68,29 @@ function myFunction() {
 $("body").click(function () {
     lastClick = (new Date()).getTime();
     isActive = true;
+    timeSince = 0;
 });
 	
     var x = document.getElementById("demo");
     //shouln't affect timeout
     if (document.hasFocus()) {
-setInterval("howlong()", 10);
-setInterval("isActive()", 10);
-        x.innerHTML = isActive + "because time since is last click is: " + timeSince;
+//setInterval("howlong()", 10);
+//setInterval("isActive(timeSince)", 10);
+  //      x.innerHTML = isActive + "because time since is last click is: " + timeSince;
     }
     // doc is not in focus and has been touching 
     else {
  
-    	howlong();
+   // 	howlong();
     	//if docs not in focus and theyre active its not timeout, its them
     	//if (isActive == true) {
-	  	document.write("timeSince: " + timeSince);
+	  	//document.write("timeSince: " + timeSince);
+	  		document.write("fail");
   		//}
     }
 }
-
-
-
-
-</script>
-</center>
-
-
+			</script>
+		</center>
 	</body>
 	</div>
 </html>
-
