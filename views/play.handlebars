@@ -19,15 +19,15 @@
 				<p id="demo"></p>
 
 			<button onclick ="completeTask()">Click When Time's Up to Finish!</button>
- +
- +			<!-- timer implemented below -->
- +			<script>
- +				function completeTask (){
- +				setTimeout(function(){ alert("Good job! Go Home and rest"); }, 3000);
- +				}
+
+			<!-- timer implemented below -->
+			<script>
+				function completeTask (){
+				setTimeout(function(){ alert("Good job! Go Home and rest"); }, 3000);
+				}
  				//setTimeout(function(){ alert("Good job!"); }, 3000);
- +			//	}
- +			</script>
+			//	}
+			</script>
 			<!-- timer implemented below -->
 			<script>
 
@@ -62,7 +62,7 @@ function howlong() {
 
 
 // tests if it has been 15 seconds since the user has been on their phone, and the reason for not in focus is lock screen (40 sec for me)
-function isActive(x)	{
+function userActive(x)	{
 	//if not in focus, but theyr active, its their fault
     if (x < 5000) {
   		isActive = true;
@@ -72,8 +72,8 @@ function isActive(x)	{
   		isActive = false;
   	}
 }
-//setInterval("howlong()", 10);
-//setInterval("isActive(timeSince)", 10);
+setInterval("howlong()", 10);
+setInterval("userActive(timeSince)", 10);
 
 
 
@@ -118,7 +118,7 @@ $("body").click(function () {
     	}
     	//setTimeout({image.src = "images/happy1.png";}
 //setInterval("howlong()", 10);
-//setInterval("isActive(timeSince)", 10);
+//setInterval("userActive(timeSince)", 10);
   //      x.innerHTML = isActive + "because time since is last click is: " + timeSince;
     }
     // doc is not in focus and has been touching 
