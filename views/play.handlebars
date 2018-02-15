@@ -12,7 +12,7 @@
 			<!-- we should put their chosen animal var here later -->
 
 			{{#with animals.[0]}}
-			<a id="images"><img src ="{{imageURL}}"/></a>
+			<a id="image"><img src ="{{imageURL}}"/></a>
 			{{/with}}
 			<!--<img id="image" src="./images/happy1.png" alt="MISSING CHARACTER PNG" > <br> -->
 	</head>
@@ -65,7 +65,19 @@
 				var image=document.getElementById("image");
 			    var currentPos = 0;
 			    //add ,"" to cycle through all images
-			    var images = ["./images/Happy2.png"]
+			    var images = [
+				{{#with animals.[0]}}
+				"{{imageURL}}"
+				{{/with}}
+				{{#with animals.[1]}}
+				"{{imageURL}}"
+				{{/with}}
+				{{#with animals.[2]}}
+				"{{imageURL}}"
+				{{/with}}
+
+
+			    ]
 
 
 			    var hasBeenSad;
@@ -78,7 +90,9 @@
 			    }
 
 			    function fotoSad() {
-			        image.src = "./images/Sad.png";
+			   	     image.src = {{#with animals.[3]}}
+					"{{imageURL}}"
+					{{/with}}
 			        hasBeenSad = true;
 			    }
 			    //about 5 second. will change to half hour after test
