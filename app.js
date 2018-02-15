@@ -49,6 +49,12 @@ app.get('/options', options.view);
 app.get('/play', play.view);
 app.get('/entry', entry.view);
 app.get('/choose', choose.view);
+
+app.get('/welcome', welcome.view);
+app.get('/login', login.view);
+app.get('/nameFriend', nameFriend.view);
+app.get('/playTime', playTime.view);
+
 // Example route
 // app.get('/users', user.list);
 
