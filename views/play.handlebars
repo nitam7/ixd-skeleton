@@ -17,6 +17,17 @@
 	<body>
 
 				<p id="demo"></p>
+
+			<button onclick ="completeTask()">Click When Time's Up to Finish!</button>
+ +
+ +			<!-- timer implemented below -->
+ +			<script>
+ +				function completeTask (){
+ +				setTimeout(function(){ alert("Good job! Go Home and rest"); }, 3000);
+ +				}
+ 				//setTimeout(function(){ alert("Good job!"); }, 3000);
+ +			//	}
+ +			</script>
 			<!-- timer implemented below -->
 			<script>
 
@@ -101,7 +112,7 @@ $("body").click(function () {
     //shouln't affect timeout
     if (document.hasFocus()) {
     	if (hasBeenSad == true) {
-    		
+
     		//find a way to start cycle over.
     		//also if you add another happy pic you can see that it cycles continueously. must fix
     	}
