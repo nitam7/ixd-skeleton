@@ -1,13 +1,12 @@
 <!DOCTYPE HTML>
 <html>
+    <link href="/css/highcharts.css" rel ="stylesheet">
+    <link href ="/css/entry.css" rel ="stylesheet">
+    <a href ="./diary"/>Back</a>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>FocusFriend</title>
-
-		<style type="text/css">
-
-		</style>
 	</head>
 	<body>
 <script src="/js/highcharts.js"></script>
@@ -18,8 +17,7 @@
 
 
 		<script type="text/javascript">
-{{#each productivity}}
-Highcharts.chart('container{{id}}', {
+Highcharts.chart('container', {
     chart: {
         type: 'line'
     },
@@ -30,7 +28,7 @@ Highcharts.chart('container{{id}}', {
         text: 'Productivity Levels'
     },
     xAxis: {
-        categories: {{category}}
+        categories: ['0', '1', '2', '3', '4', '5', '6']
     },
     yAxis: {
         title: {
@@ -45,12 +43,15 @@ Highcharts.chart('container{{id}}', {
             enableMouseTracking: false
         }
     },
-    series: [{
-        name: 'Hours',
-        data: {{series}}
-    }]
+    series: [
+        {{#each productivity}}
+            {{beginmark}}
+            name: '{{date}}',
+            data: {{series}}
+            {{endmark}}
+        {{/each}}
+    ]
 });
-{{/each}}
 		</script>
 	</body>
 </html>
