@@ -1,14 +1,18 @@
 {
 	"productivity": [
 		{
+			"beginmark": "{",
 			"date": "Today",
-			"category": "['0', '1', '2', '3', '4']",
-			"series": "[100, 80, 85, 70, 80]"
+			"category": "[0, 1, 2, 3, 4]",
+			"series": "[100, 80, 85, 70, 80]",
+			"endmark": "},"
 		},
 		{
+			"beginmark": "{",
 			"date": "Yesterday",
-			"cateogory": "['0', '1', '2']",
-			"series": "[100, 90, 95]"
+			"category": "[0, 1, 2]",
+			"series": "[100, 90, 95]",
+			"endmark": "}"
 		}
 
 	]
