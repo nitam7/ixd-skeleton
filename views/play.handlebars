@@ -9,21 +9,19 @@
 		<center>
 			<h1>Focus Together!</h1>
 			<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-			<!-- we should put their chosen animal var here later -->
 
+			<!-- we should put their chosen animal var here later -->
 			{{#with animals.[0]}}
 			<a id="image"><img src ="{{imageURL}}"/></a>
 			{{/with}}
-			<!--<img id="image" src="./images/happy1.png" alt="MISSING CHARACTER PNG" > <br> -->
+
 	</head>
 	<body>
 
-				<p id="demo"></p>
-
+			<p id="demo"></p>
 			<button onclick ="completeTask()">Click When Time's Up to Finish!</button>
-			
-			<!-- PROGRESS BAR -->
 
+			<!-- PROGRESS BAR -->
 			<div id ="userProgress">
 				<div id ="progressBar">0%</div>
 			</div>
@@ -56,16 +54,41 @@
 				function completeTask (){
 				setTimeout(function(){ alert("Good job! Go Home and rest"); }, 3000);
 				}
- 				//setTimeout(function(){ alert("Good job!"); }, 3000);
-			//	}
 			</script>
+
+			{{#each animals}}
+
+					<script>
+								console.log("this.imageURL")
+								document.write(imageURL);
+					var image = document.getElementById("image");
+
+					function changePic (){
+					setTimeout(function(){ //image.src= this.imageURL; 
+						document.write("hi");
+						}, 3000);
+					}
+					</script>
+
+			{{/each}}
+
 			<!-- timer implemented below -->
 			<script>
 
-				var image=document.getElementById("image");
-			    var currentPos = 0;
+				/*function changeImages (){
+				setTimeout(function(){ 
+				var image = document.getElementById("image");
+				var currentPos = 0;
+
+
+
+					 }, 3000);
+				}
+*/
+		
+		
 			    //add ,"" to cycle through all images
-			   // var images = [
+			   	//var images = [animals.[0],]
 				//{{#with animals.[0]}}
 				//"{{imageURL}}"
 				/*{{/with}}
@@ -80,12 +103,14 @@
 			    //]
 
 
+
+
 			    var hasBeenSad;
 
 	
 
 			    function fotoGood() {
-			        if (++currentPos >= images.length) currentPos = 0;
+			        if (++currentPos >= (animals.length - 1)) currentPos = 0;
 			        image.src = images[currentPos];
 			    }
 
