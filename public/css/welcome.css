@@ -28,3 +28,12 @@ body {
 	font-family: CaviarDreams;
 	font-size: 4em;
 }
+
+button {
+	width: 30em;
+	height: 10em;
+	background-color: #E9C46A;
+	border: none;
+	border-radius: 4em;
+
+}

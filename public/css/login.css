@@ -26,5 +26,20 @@ body {
 
 .container h1{
 	font-family: CaviarDreams;
-	font-size: 4em;
+	font-size: 6em;
+}
+
+input[type=text], select {
+	width: 40em;
+	height: 10em;
+	border: 2em solid #ffffff;
+	border-radius: 2em;
+}
+
+input[type=submit] {
+	width: 40em;
+	height: 5em;
+	background-color: #E9C46A;
+	border: none;
+	border-radius: 2em;
 }
