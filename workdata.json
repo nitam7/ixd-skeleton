@@ -2,8 +2,13 @@
 	"productivity": [
 		{
 			"date": "Today",
-			"xaxis": "['0', '1', '2', '3', '4']",
+			"category": "['0', '1', '2', '3', '4']",
 			"series": "[100, 80, 85, 70, 80]"
+		},
+		{
+			"date": "Yesterday",
+			"cateogory": "['0', '1', '2']",
+			"series": "[100, 90, 95]"
 		}
 
 	]

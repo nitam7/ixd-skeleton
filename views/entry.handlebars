@@ -30,7 +30,8 @@ Highcharts.chart('container', {
         text: 'Productivity Levels'
     },
     xAxis: {
-        categories: '['0', '1', '2', '3', '4']'
+        categories: {{category}}
+    },
     yAxis: {
         title: {
             text: 'Percentage'
@@ -46,7 +47,7 @@ Highcharts.chart('container', {
     },
     series: [{
         name: 'Hours',
-        data: '['100', 80, 85, 70, 80]'
+        data: {{series}}
     }]
 });
 {{/each}}
