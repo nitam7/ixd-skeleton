@@ -8,15 +8,15 @@
 
 		{
 	
-			"imageURL": "./images/Happy2.png" 
+			"imageURL": "/images/Happy2.png" 
 		},
 		{
 			
-			"imageURL": "/images/Happy3.png"
+			"imageURL": "/images/Happy3.jpg"
 		},
 		{
 
-			"imageURL": "/images/Sad.png"
+			"imageURL": "./images/Sad.png"
 		}
 	]
 }

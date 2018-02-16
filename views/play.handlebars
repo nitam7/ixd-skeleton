@@ -56,15 +56,30 @@
 				}
 			</script>
 
+			<script>
+			
+			</script>
+
+
 			{{#each animals}}
+					<script>
+				
+
+			
+					</script>
 
 					<script>
-								console.log("this.imageURL")
-								document.write(imageURL);
-					var image = document.getElementById("image");
+					var imagy = document.getElementById("image");
+					console.log(imagy);
+					imagy.src = "/images/Happy2.png";
+					console.log(imagy);
+					//console.log("imageURL");
+					//document.write("imageURL");
+					
+
 
 					function changePic (){
-					setTimeout(function(){ //image.src= this.imageURL; 
+					setTimeout(function(){ image.src= this.imageURL; 
 						document.write("hi");
 						}, 3000);
 					}
@@ -173,7 +188,7 @@ noSleep.disable();
 
 
 setInterval("myFunction()", 10);
-
+var parsedData = JSON.parse(playData);
 function myFunction() {
 
 //whenever you click reset lastclick and user
@@ -198,7 +213,12 @@ $("body").click(function () {
     }
     // doc is not in focus and has been touching 
     else {
- 
+ 		//var image_x = document.getElementById('image');
+		//image_x.parentNode.removeChild(image);
+		
+		var x = document.getElementById("image");
+		image.src=parsedData[0].imageURL;
+		console.log(image)
    // 	howlong();
     	//if docs not in focus and theyre active its not timeout, its them
     	//if (isActive == true) {

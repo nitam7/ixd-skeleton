@@ -2,9 +2,9 @@
  * GET play page.
  */
 
-var data = require("../playData.json");
+var playData = require("../playData.json");
 
 exports.view = function(req, res){
-  	console.log(data);
-  	res.render('play', data);
+  	console.log(playData);
+  	res.render('play', playData);
 };
