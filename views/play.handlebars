@@ -56,179 +56,44 @@
 				}
 			</script>
 
-			<script>
-			
-			</script>
 
 
 			{{#each animals}}
-					<script>
-				
-
-			
-					</script>
-
-					<script>
-					var imagy = document.getElementById("image");
-					console.log(imagy);
-					imagy.src = "/images/Happy2.png";
-					console.log(imagy);
-					//console.log("imageURL");
-					//document.write("imageURL");
-					
-
-
-					function changePic (){
-					setTimeout(function(){ image.src= this.imageURL; 
-						document.write("hi");
-						}, 3000);
-					}
-					</script>
-
+					<!--	<a id="image"><img src ="{{imageURL}}"/></a> -->
 			{{/each}}
 
 			<!-- timer implemented below -->
 			<script>
 
-				/*function changeImages (){
-				setTimeout(function(){ 
-				var image = document.getElementById("image");
-				var currentPos = 0;
-
-
-
-					 }, 3000);
-				}
-*/
-		
-		
-			    //add ,"" to cycle through all images
-			   	//var images = [animals.[0],]
-				//{{#with animals.[0]}}
-				//"{{imageURL}}"
-				/*{{/with}}
-				{{#with animals.[1]}}
-				"{{imageURL}}"
-				{{/with}}
-				{{#with animals.[2]}}
-				"{{imageURL}}"
-				{{/with}}
-*/
-
-			    //]
-
-
-
-
-			    var hasBeenSad;
-
-	
-
-			    function fotoGood() {
-			        if (++currentPos >= (animals.length - 1)) currentPos = 0;
+				var image=document.getElementById("image");
+			    var currentPos = 0;
+			    var images = ["./images/cogs 120 tiger.PNG","./images/cogs 120 pig.PNG","./images/cogs 120 dog.PNG"]
+			    function foto() {
+			        if (++currentPos >= images.length) currentPos = 0;
 			        image.src = images[currentPos];
 			    }
+			    setInterval(foto, 3000);
 
-			    function fotoSad() {
-			   	    // image.src = [{{#with animals.[3]}}
-				//	"{{imageURL}}"
-				//	{{/with}}]
-			        hasBeenSad = true;
-			    }
-			    //about 5 second. will change to half hour after test
-			    //setInterval(fotoGood, 5000);
+				    var x = document.getElementById("demo");
+				    
+				    //shouln't affect timeout
+				    if (document.hasFocus()) {
+				   
+				    }
+				    // doc is not in focus and has been touching 
+				    else {
+						
+						//var x = document.getElementById("image");
+						//image.src=parsedData[0].imageURL;
+						//console.log(image)
+						//var imagu = document.getElementById("image");
+						badPic();
+					  	document.write("image.src");
+					  	
 
-
-var lastClick = 0;
-var timeSince = 0;
-var isActive;
-
-//for all events
-//$('*').on('blur change click dblclick error focus focusin focusout hover keydown keypress keyup load mousedown mouseenter mouseleave mousemove mouseout mouseover mouseup resize scroll select submit', function() {
-
-function howlong() {
-    timeSince = ((new Date()).getTime() - lastClick);
-}
-
-
-// tests if it has been 15 seconds since the user has been on their phone, and the reason for not in focus is lock screen (40 sec for me)
-function userActive(x)	{
-	//if not in focus, but theyr active, its their fault
-    if (x < 5000) {
-  		isActive = true;
-  	}
-  	//lock screen activates
-  	else if (x > 5000) {
-  		isActive = false;
-  	}
-}
-setInterval("howlong()", 10);
-setInterval("userActive(timeSince)", 10);
-
-
-
-//LINK TO 'GO' BUTTON AFTER TIME IS INPUT. DISABLE ON RETURN TO HOME BUTTON IF FAILED OR TIME UP
-//seems to interfere with the else in hasfocus
-/*var noSleep = new NoSleep();
-
-function enableNoSleep() {
-  noSleep.enable();
-  document.removeEventListener('touchstart', enableNoSleep, false);
-}
-
-// Enable wake lock.
-// (must be wrapped in a user input event handler e.g. a mouse or touch handler)
-document.addEventListener('touchstart', enableNoSleep, false);
-//Once you want to cede control of sleep, simply call the disable method:
-
-// Disable wake lock at some point in the future.
-// (does not need to be wrapped in any user input event handler)
-noSleep.disable();
-*/
-
-
-setInterval("myFunction()", 10);
-var parsedData = JSON.parse(playData);
-function myFunction() {
-
-//whenever you click reset lastclick and user
-$("body").click(function () {
-    lastClick = (new Date()).getTime();
-    isActive = true;
-    timeSince = 0;
-});
-	
-    var x = document.getElementById("demo");
-    //shouln't affect timeout
-    if (document.hasFocus()) {
-    	if (hasBeenSad == true) {
-
-    		//find a way to start cycle over.
-    		//also if you add another happy pic you can see that it cycles continueously. must fix
-    	}
-    	//setTimeout({image.src = "./images/happy1.png";}
-//setInterval("howlong()", 10);
-//setInterval("userActive(timeSince)", 10);
-  //      x.innerHTML = isActive + "because time since is last click is: " + timeSince;
-    }
-    // doc is not in focus and has been touching 
-    else {
- 		//var image_x = document.getElementById('image');
-		//image_x.parentNode.removeChild(image);
-		
-		var x = document.getElementById("image");
-		image.src=parsedData[0].imageURL;
-		console.log(image)
-   // 	howlong();
-    	//if docs not in focus and theyre active its not timeout, its them
-    	//if (isActive == true) {
-	  	//document.write("timeSince: " + timeSince);
-	  		//document.write("fail");
-	  		fotoSad();
-
-  		//}
-    }
-}
+				  		//}
+				    }
+				
 			</script>
 	</body>
 	</center>
