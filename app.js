@@ -43,14 +43,15 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', index.view);
+app.get('/', welcome.view); //TODO index.view
 app.get('/diary', diary.view);
 app.get('/options', options.view);
 app.get('/play', play.view);
 app.get('/entry', entry.view);
 app.get('/choose', choose.view);
 
-app.get('/welcome', welcome.view);
+//app.get('/welcome', welcome.view);
+app.get('/index', index.view);
 app.get('/login', login.view);
 app.get('/nameFriend', nameFriend.view);
 app.get('/playTime', playTime.view);
