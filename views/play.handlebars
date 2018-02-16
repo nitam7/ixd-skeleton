@@ -9,20 +9,28 @@
 		<center>
 			<h1>Focus Together!</h1>
 			<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+				{{#with animals.[0]}}
+						<img id ="image" src ="{{imageURL}}"/>
+					{{/with}} 
 			<script> 
-					setInterval(foto(), 1000);
+				
+				setInterval("myFunction()", 10);
+				function myFunction() {
+
 					var happy = ["./images/Happy1.png","./images/Happy2.png","./images/Happy3.png"];
 					var i = document.getElementById("image");
 				    //shouln't affect timeout
 				    var currentPos = 0;
 				    function foto() {
-				    	if(document.hasFocus()) {
-					    	i.src = happy[currentPos];
+				    	i.src = happy[currentPos];
 					    	currentPos++;
 					        if (currentPos == happy.length){
 					        	currentPos = 0;
 					        }
-
+					}
+				    	if(document.hasFocus()) {
+				    		//i.src = "./images/Happy2.png";
+				    		setInterval(foto(), 1000);
 						// var x = document.getElementById("demo");
 				   		} else {
 				    // doc is not in focus and has been touching 
@@ -35,7 +43,7 @@
 						//image.src="./images/Sad.png";
 						//badPic();
 							console.log(image);
-					  		document.write("doggo getting sadder");
+					  		//document.write("doggo getting sadder");
 						}
 					}
 			</script>
@@ -43,13 +51,13 @@
 	</head>
 	<body>
 
+<!-- 			{{#each animals}}
+						<a id="image"><img src ="{{imageURL}}"/></a> 
+			{{/each}} -->
 		<!-- we should put their chosen animal var here later -->
-			<!-- {{#with animals.[0]}} -->
-			<img id ="image" src ="./images/Happy1.png">
-			<!-- {{/with}} -->
+		
 
-		<!-- timer implemented below -->
-			
+			<!-- timer implemented below -->			
 			<p id="demo"></p>
 			<button onclick ="completeTask()">Click When Time's Up to Finish!</button>
 
@@ -87,13 +95,6 @@
 				setTimeout(function(){ alert("Good job! Go Home and rest"); }, 3000);
 				}
 			</script>
-
-
-
-<!-- 			{{#each animals}}
-						<a id="image"><img src ="{{imageURL}}"/></a> 
-			{{/each}} -->
-
 			
 	</body>
 	</center>
