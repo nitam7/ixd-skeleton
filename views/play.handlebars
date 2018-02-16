@@ -12,25 +12,19 @@
 				{{#with animals.[0]}}
 						<img id ="image" src ="{{imageURL}}"/>
 					{{/with}} 
+			
 			<script> 
-				
-				setInterval("myFunction()", 10);
-				function myFunction() {
-
-					var happy = ["./images/Happy1.png","./images/Happy2.png","./images/Happy3.png"];
 					var i = document.getElementById("image");
-				    //shouln't affect timeout
-				    var currentPos = 0;
-				    function foto() {
-				    	i.src = happy[currentPos];
-					    	currentPos++;
-					        if (currentPos == happy.length){
-					        	currentPos = 0;
-					        }
-					}
+					setInterval("myFunction()", 10);
+				
+					function myFunction() {
+
+				
 				    	if(document.hasFocus()) {
-				    		//i.src = "./images/Happy2.png";
-				    		setInterval(foto(), 1000);
+				    		setTimeout( function() {i.src = "./images/Happy1.png"},2000);
+				    		setTimeout( function() {i.src = "./images/Happy2.png"},2000);
+				    		//setTimeout( function() {i.src = "./images/Happy3.jpg"},2000);
+				    		//setInterval(foto(), 1000);
 						// var x = document.getElementById("demo");
 				   		} else {
 				    // doc is not in focus and has been touching 
