@@ -9,15 +9,26 @@
 		<center>
 			<h1>Focus Together!</h1>
 			<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	</head>
+	<body>
+
+		<!-- we should put their chosen animal var here later -->
+			<!-- {{#with animals.[0]}} -->
+			<img id ="image" src ="./images/Happy1.png">
+
+			<!-- {{/with}} -->
+
+		<!-- timer implemented below -->
+			
 			<script> 
-					setInterval(foto(), 1000);
-					var happy = ["./images/Happy1.png","./images/Happy2.png","./images/Happy3.png"];
-					var i = document.getElementById("image");
 				    //shouln't affect timeout
-				    var currentPos = 0;
 				    function foto() {
+				    	var currentPos = 0;
+				    	var happy = ["./images/Happy1.png","./images/Happy2.png","./images/Happy3.png"];
+						var i = document.getElementById("image");
 				    	if(document.hasFocus()) {
-					    	i.src = happy[currentPos];
+				    		console.log("Has focus");
+					    	document.getElementById("image").src = happy[currentPos];
 					    	currentPos++;
 					        if (currentPos == happy.length){
 					        	currentPos = 0;
@@ -25,31 +36,25 @@
 
 						// var x = document.getElementById("demo");
 				   		} else {
+				   			console.log("No focus");
 				    // doc is not in focus and has been touching 
 						
 						//var x = document.getElementById("image");
 						//image.src=parsedData[0].imageURL;
 						//console.log(image)
 						//var imagu = document.getElementById("image");
-							i.src = "./images/Sad.png";
+							document.getElementById("image").src = "./images/Sad.png";
 						//image.src="./images/Sad.png";
 						//badPic();
-							console.log(image);
 					  		document.write("doggo getting sadder");
 						}
 					}
+
+					setInterval(foto, 500);
 			</script>
 
-	</head>
-	<body>
+			<!--demo-->
 
-		<!-- we should put their chosen animal var here later -->
-			<!-- {{#with animals.[0]}} -->
-			<img id ="image" src ="./images/Happy1.png">
-			<!-- {{/with}} -->
-
-		<!-- timer implemented below -->
-			
 			<p id="demo"></p>
 			<button onclick ="completeTask()">Click When Time's Up to Finish!</button>
 
