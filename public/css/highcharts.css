@@ -819,3 +819,7 @@ text.highcharts-drilldown-data-label,
 .highcharts-annotation-label text {
   fill: #e6e6e6;
 }
+
+.highcharts-drillup-button {
+  display: none;
+}

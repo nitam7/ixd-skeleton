@@ -1,0 +1,74 @@
+html, body{
+	width: 100%;
+	height: 100%;
+}
+
+@font-face {
+	font-family: CaviarDreams;
+	src: url(CaviarDreams.tff);
+}
+
+body {
+	background-image: url("../images/background-lightgreen.jpg");
+	background-repeat: no-repeat;
+	height: 100%;
+	background-position: center;
+	/*background: linear-gradient(to bottom, rgba(91,174,94,0), rgba(91,174,94,1));*/
+	background-attachment:fixed;
+}
+
+.container p {
+	font-size: 2.5em;
+}
+
+.container a {
+	font-size: 2.5em;
+	text-decoration: none;
+	color: #272838;
+}
+
+.container a:hover {
+	color: #E9C46A;
+}
+
+.container h1{
+	font-family: CaviarDreams;
+	font-size: 4em;
+}
+
+.container h3 {
+	font-family: CaviarDreams;
+	font-size: 3.5em;
+}
+
+form {
+	font-family: CaviarDreams;
+	font-size: 2em;
+}
+
+input[type=text], select {
+	width: 40rem;
+	height: 10rem;
+	border: 0.1em solid gray;
+	border-radius: 1em;
+	font-size: 1.5em;
+}
+
+input[type=number], select {
+	width: 40rem;
+	height: 10rem;
+	border: 0.1em solid gray;
+	border-radius: 1em;
+	font-size: 1.5em;
+}
+
+input[type=submit] {
+	font-family: CaviarDreams;
+	width: 40rem;
+	height: 5rem;
+	background-color: #ffffff;
+	color: #5BAE5E;
+	border: 0.1em solid #5BAE5E;
+	border-radius: 1em;
+	font-size: 1.5em;
+}

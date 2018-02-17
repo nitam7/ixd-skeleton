@@ -1,17 +1,72 @@
 <html> 
-	<link href ="/css/diary.css" rel="stylesheet">
+	<link href= "/css/general.css" rel="stylesheet">
+	<link href="/css/highcharts.css" rel ="stylesheet">
+    <link href ="/css/entry.css" rel ="stylesheet">
 	<script defer src = "/js/fontawesome-all.js"></script>
 	<div class = "container">
 	<head>
 		<a href ="./index"><i class ="fa fa-home fa-2x"></i></a>
+		<!--chart stuff-->
+
 		<title>FocusFriend</title>
 		<center>
-			<h1>D i a r y</h1>
+			<h1>P r o g r e s s</h1>
+		</center>
 	</head>
 	<body>
-		<a href ="./entry">View My Progress</a>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="/js/highcharts.js"></script>
+		<script src="/js/exporting.js"></script>
 
-		</center>
+		<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+
+		<script type="text/javascript">
+
+Highcharts.chart('container', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: '{{date}}'
+    },
+    subtitle: {
+        text: 'Productivity Levels'
+    },
+    xAxis: {
+        categories: ['0', '1', '2', '3', '4', '5', '6']
+    },
+    yAxis: {
+        title: {
+            text: 'Percentage'
+        }
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+    series: [
+        {{#each productivity}}
+            {{beginmark}}
+            name: '{{date}}',
+            data: {{series}}
+            {{endmark}}
+        {{/each}}
+    ]
+});
+
+Highcharts.setOptions({
+    lang: {
+        drillUpText: ''
+    }
+});
+		</script>
 	</body>
 	</div>
 </html>

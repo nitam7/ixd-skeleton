@@ -4,19 +4,12 @@
  * GET home page.
  */
 
+/*
+ * GET home page.
+ */
+var workdata = require("../workdata.json");
+
 exports.view = function(req, res){
-	var main = req.params.name;
-  res.render("diary", {
-  	"diaries": [
-  	  {	"diaryName": "Title 1",
-        "id": "entry1",
-        "date": "1/15/18"
-  	  }, 
-      {
-        "diaryName": "Title 2",
-        "id": "entry2",
-        "date": "1/14/18"
-      }
-  	]
-  });
-}
+  console.log(workdata);
+    res.render('entry', workdata);
+};
