@@ -14,7 +14,7 @@
 						<img id ="image" src ="{{imageURL}}"/>
 					{{/with}} 
 			
-			<script> 
+			<script>
 					var i = document.getElementById("image");
 					setInterval("myFunction()", 10);
 				
@@ -67,6 +67,12 @@
 			<button onclick ="move()">Go</button>
 
 			<script>
+			function processInput() {
+				var str = location.search.substring(1).split("?");
+				console.log(str);
+			}
+			processInput();
+
 			function move() {
 				var elem = document.getElementById("progressBar");
 				var width = 1;

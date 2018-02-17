@@ -9,20 +9,21 @@
 			<h1>Enter Time To Play</h1>
 	</head>
 	<body>
-		<form action = "./play">
-				Minutes:<br><br>
-				<input type ="number" name="minutes">
-				<br>
-				<br>
-				<br>
-				Hours:<br><br>
-				<input type ="number" name="hours">
+		<form action = "./play" method ="GET">
+				Hours : Minutes<br><br>
+				<table>
+					<tr>
+						<td><input type ="number" name="hours"></td>
+						<td><p> : </p></td>
+						<td><input type ="number" name="minutes"></td>
+					</tr>
+				</table>
 				<br>
 				<br>
 				<br>
 				<br>
 				<input type ="submit" value = "Play">
-			</form>
+		</form>
 	</body>
 	</center>
 	</div>

@@ -55,6 +55,15 @@ input[type=text], select {
 }
 
 input[type=number], select {
+	width: 30rem;
+	height: 10rem;
+	border: 0.1em solid gray;
+	border-radius: 1em;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+input[type=PASSWORD], select {
 	width: 40rem;
 	height: 10rem;
 	border: 0.1em solid gray;
