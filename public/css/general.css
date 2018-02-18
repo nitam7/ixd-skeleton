@@ -41,6 +41,11 @@ body {
 	font-size: 3.5em;
 }
 
+.container h6 {
+	font-family: CaviarDreams;
+	font-size: 1em;
+}
+
 form {
 	font-family: CaviarDreams;
 	font-size: 2em;

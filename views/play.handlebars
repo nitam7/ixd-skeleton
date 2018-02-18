@@ -66,17 +66,54 @@
 			<br>
 			<button onclick ="move()">Go</button>
 
+
+ 			<!-- <div id ="percentage" class ="percentage-count">100%</div>
+ 				<div class ="progress-bar">
+ 					<div class ="progress" id ="progress">
+ 					</div>
+ 				</div>
+ 			</div> -->
+
 			<script>
 			function processInput() {
-				var str = location.search.substring(1).split("?");
-				console.log(str);
+				var str = location.search;
+				var hours = str.substring(str.indexOf("=") + 1, str.indexOf("&"));
+				var minutes = str.substring(str.lastIndexOf("=") + 1);
+				var totalTime = (hours * 3600000) + (minutes * 60000);
+				return totalTime;
 			}
-			processInput();
+
+			// function progressMove(){
+			// 	var prg = document.getElementById("progress");
+			// 	var percent = document.getElementById("percentage");
+			// 	var count = 5;
+			// 	var progress = 0;
+			// 	var id = setInterval(frame, 50);
+
+			// 	function frame() {
+			// 		if (progress == 20 && count == 100) {
+			// 			clearInterval(id);
+			// 		} else {
+			// 			progress += 1;
+			// 			count += 10;
+			// 			prg.style.width = progress + 'em';
+			// 			percent.innerHTML = count + '%';
+			// 		}
+			// 	}
+
+			// }
+
+			// progressMove();
 
 			function move() {
+				var time = processInput();
+				console.log(time);
 				var elem = document.getElementById("progressBar");
 				var width = 1;
-				var id = setInterval(frame, 10);
+
+				var count = totalTime/100;
+				console.log(count);
+				var id = setInterval(frame, count);
 				function frame() {
 					if (width >= 100) {
 						clearInterval(id);
