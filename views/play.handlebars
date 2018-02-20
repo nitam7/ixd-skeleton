@@ -83,6 +83,26 @@
 				return totalTime;
 			}
 
+			function move() {
+				var time = processInput();
+				console.log(time);
+				var elem = document.getElementById("progressBar");
+				var width = 1;
+
+				var count = time/100;
+				console.log(count);
+				var id = setInterval(frame, count);
+				function frame() {
+					if (width >= 100) {
+						clearInterval(id);
+					} else {
+						width++;
+						elem.style.width = width + '%';
+						elem.innerHTML = width * 1 + '%';
+					}
+				}
+			}
+
 			// function progressMove(){
 			// 	var prg = document.getElementById("progress");
 			// 	var percent = document.getElementById("percentage");
@@ -105,25 +125,6 @@
 
 			// progressMove();
 
-			function move() {
-				var time = processInput();
-				console.log(time);
-				var elem = document.getElementById("progressBar");
-				var width = 1;
-
-				var count = totalTime/100;
-				console.log(count);
-				var id = setInterval(frame, count);
-				function frame() {
-					if (width >= 100) {
-						clearInterval(id);
-					} else {
-						width++;
-						elem.style.width = width + '%';
-						elem.innerHTML = width * 1 + '%';
-					}
-				}
-			}
 			</script>
 
 			<br>
