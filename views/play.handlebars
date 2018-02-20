@@ -76,21 +76,28 @@
 
 			<script>
 			function processInput() {
+				//get user's minute and hour input
 				var str = location.search;
 				var hours = str.substring(str.indexOf("=") + 1, str.indexOf("&"));
 				var minutes = str.substring(str.lastIndexOf("=") + 1);
+
+				//convert the given input into milliseconds
 				var totalTime = (hours * 3600000) + (minutes * 60000);
+				//return the total time in milliseconds
 				return totalTime;
 			}
 
 			function move() {
+				//get the total time from this function into variable time
 				var time = processInput();
-				console.log(time);
+				//make that progress bar move
 				var elem = document.getElementById("progressBar");
 				var width = 1;
 
+				//divide the total time into percentage, which is out of 100
 				var count = time/100;
-				console.log(count);
+				
+				//visual movement
 				var id = setInterval(frame, count);
 				function frame() {
 					if (width >= 100) {
