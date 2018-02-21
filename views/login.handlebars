@@ -10,12 +10,15 @@
 			<h1>Sign Up or Log In</h1>
 	</head>
 	<body>
+		<h1>Sign in to Facebook</h1>
+		<p class="facebookLogin">
+			<br>
+			<br>
+			<fb:login-button scope ="public_profile,email" onlogin ="checkLoginState();">
+			</fb:login-button>
+			</p>
+		</div>
 		
-		<p>Connect to Facebook</p>
-		<p id ="facebookLogin">
-		<fb: login-button scope ="public_profile,email" onlogin ="checkLoginState();" id ="facebook">
-		</fb: login-button>
-		</p>
 
 		<script type="text/javascript">
 			document.getElementById("facebook").onclick = function() {
@@ -54,6 +57,7 @@
 
 	<script src ="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	{{> facebook}}
 	<script src="/js/facebook.js"></script>
 	</body>
 	</center>
