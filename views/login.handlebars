@@ -3,6 +3,7 @@
 	<script defer src = "/js/fontawesome-all.js"></script>
 	<div class = "container">
 	<head>
+		<a href ="./index"><i class ="fa fa-home fa-2x"></i></a>
 	
 				<title>FocusFriend</title>
 		<center>
@@ -10,8 +11,21 @@
 	</head>
 	<body>
 		
-		<p>Connect to facebook:</p>
-		<button id = "faceBookLogin">FaceBook pic goes here</button>
+		<p>Connect to Facebook</p>
+		<p id ="facebookLogin">
+		<fb: login-button scope ="public_profile,email" onlogin ="checkLoginState();" id ="facebook">
+		</fb: login-button>
+		</p>
+
+		<script type="text/javascript">
+			document.getElementById("facebook").onclick = function() {
+				alert("Connected!");
+					location.href = "./index";
+		}
+		</script>
+
+
+		<!--<button id = "faceBookLogin"><i class="fab fa-facebook-square fa-5x"></i></button>
 		<script type="text/javascript">
 			document.getElementById("faceBookLogin").onclick = function () {
 				alert("Facebook sign in stuff..... Connected!");
@@ -19,7 +33,7 @@
 	
 			};
 		</script>
-
+		-->
 		<p>Sign in with email:</p>
 		<button id = "signIn">Sign In with Email</button>
 		<script type="text/javascript">
@@ -38,6 +52,9 @@
 
 		<br>
 
+	<script src ="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/facebook.js"></script>
 	</body>
 	</center>
 	</div>
