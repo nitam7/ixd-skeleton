@@ -11,6 +11,7 @@ var handlebars = require('express3-handlebars')
 var index = require('./routes/index');
 // Example route
 // var user = require('./routes/user');
+var newAccount = require('./routes/newAccount');
 var choose = require('./routes/choose');
 var diary = require('./routes/diary');
 var options = require('./routes/options');
@@ -55,6 +56,7 @@ app.get('/index', index.view);
 app.get('/login', login.view);
 app.get('/nameFriend', nameFriend.view);
 app.get('/playTime', playTime.view);
+app.get('/newAccount', newAccount.view);
 
 // Example route
 // app.get('/users', user.list);

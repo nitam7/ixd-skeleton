@@ -6,23 +6,38 @@
 	
 				<title>FocusFriend</title>
 		<center>
-			<h1>Log In</h1>
+			<h1>Sign Up or Log In</h1>
 	</head>
 	<body>
-		<form action = "./choose">
-					Username<br><br>
-					<input type ="text" name= "username">
-					<br>
-					<br>
-					<br>
-					Password<br><br>
-					<input type ="PASSWORD" name="password">
-					<br>
-					<br>
-					<br>
-					<br>
-					<input type ="submit" value ="Next">
-				</form>
+		
+		<p>Connect to facebook:</p>
+		<button id = "faceBookLogin">FaceBook pic goes here</button>
+		<script type="text/javascript">
+			document.getElementById("faceBookLogin").onclick = function () {
+				alert("Facebook sign in stuff..... Connected!");
+					location.href = "./index";
+	
+			};
+		</script>
+
+		<p>Sign in with email:</p>
+		<button id = "signIn">Sign In with Email</button>
+		<script type="text/javascript">
+			document.getElementById("signIn").onclick = function () {
+				location.href = "./newAccount";
+			};
+		</script>
+		<br>
+		<p>No account?</p>
+		<button id = "signUp">Sign Up with Email:</button>
+		<script type="text/javascript">
+			document.getElementById("signUp").onclick = function () {
+				location.href = "./newAccount";
+			};
+		</script>
+
+		<br>
+
 	</body>
 	</center>
 	</div>
