@@ -56,7 +56,16 @@
 			<p id="demo"></p>
 			<button onclick ="completeTask()">Click When Time's Up to Finish!</button>
 
-			<!-- PROGRESS BAR -->
+			<!-- PROGRESS BAR PRODUCTIVITY-->
+			<br>
+			<br>
+			<br>
+			<div id ="productivityProgress">
+				<div id ="productivityBar">100%</div>
+			</div>
+			<br>
+
+			<!-- PROGRESS BAR TIME-->
 			<div id ="userProgress">
 				<div id ="progressBar">0%</div>
 			</div>
@@ -64,7 +73,7 @@
 			<br>
 			<br>
 			<br>
-			<button onclick ="move()">Go</button>
+			<button onclick ="move(); calculate()">Go</button>
 
 
  			<!-- <div id ="percentage" class ="percentage-count">100%</div>
@@ -108,6 +117,10 @@
 						elem.innerHTML = width * 1 + '%';
 					}
 				}
+			}
+
+			//calculate total productivity time. Should be 100% initially, then decrease if the user is not being producitive
+			function calculate() {
 			}
 
 			// function progressMove(){
