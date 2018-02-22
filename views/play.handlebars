@@ -93,8 +93,11 @@
 					}
 				}
 			}
+					//calling once makes shuffle work
+					myFunction();
+					//setting as interval makes only sad work
 
-					setInterval("myFunction()", 10);
+
 					function myFunction() {
 				    	if(document.hasFocus()) {
 				    	var time = processInput();
