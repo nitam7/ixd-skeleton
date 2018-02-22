@@ -14,43 +14,9 @@
 						<img id ="image" src ="{{imageURL}}"/>
 					{{/with}} 
 			
-			<script>
-					var i = document.getElementById("image");
-					setInterval("myFunction()", 10);
-				
-					function myFunction() {
 
-				
-				    	if(document.hasFocus()) {
-				    	var time = processInput();
-						console.log(time);
-						//about enough to get through all images, will change magic number to size of picpath later
-						var stagger = (time/3) + 2000;
-						console.log(stagger);
-						var picPaths = ['./images/Happy1.png','./images/Happy2.png','./images/Happy3.jpg'];
-			            var curPic = -1;
-			            //preload the images for smooth animation
-			            var imgO = new Array();
-			            for(i=0; i < picPaths.length; i++) {
-			                imgO[i] = new Image();
-			                imgO[i].src = picPaths[i];
-			            }
-
-			            function swapImage() {
-			                curPic = (++curPic > picPaths.length-1)? 0 : curPic;
-			                imgCont.src = imgO[curPic].src;
-			                setTimeout(swapImage,stagger);
-			            }
-
-			            window.onload=function() {
-			                imgCont = document.getElementById('image');
-			                swapImage();
-			            }
-				   		} else {
-							i.src = "./images/Sad.png";
-						}
-					}
-			</script>
+					
+	
 
 	</head>
 	<body>
@@ -127,6 +93,41 @@
 					}
 				}
 			}
+
+					setInterval("myFunction()", 10);
+					function myFunction() {
+				    	if(document.hasFocus()) {
+				    	var time = processInput();
+						console.log(time);
+						//about enough to get through all images, will change magic number to size of picpath later
+						var stagger = (time/3) + 2000;
+						console.log(stagger);
+						var picPaths = ['./images/Happy1.png','./images/Happy2.png','./images/Happy3.jpg'];
+			            var curPic = -1;
+			            //preload the images for smooth animation
+			            var imgO = new Array();
+			            for(i=0; i < picPaths.length; i++) {
+			                imgO[i] = new Image();
+			                imgO[i].src = picPaths[i];
+			            }
+
+			            function swapImage() {
+			                curPic = (++curPic > picPaths.length-1)? 0 : curPic;
+			                imgCont.src = imgO[curPic].src;
+			                setTimeout(swapImage,stagger);
+			            }
+
+			            window.onload=function() {
+			                imgCont = document.getElementById('image');
+			                swapImage();
+			            }
+				   		} else {
+				   			var i = document.getElementById("image");
+				   			i.src="./images/Sad.png";
+							//setInterval(function() {i.src = "./images/Sad.png"}, 10);
+						
+						}
+					}
 
 			//calculate total productivity time. Should be 100% initially, then decrease if the user is not being producitive
 			function calculate() {
