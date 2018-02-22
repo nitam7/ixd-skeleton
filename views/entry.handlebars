@@ -1,23 +1,29 @@
-<!DOCTYPE HTML>
-<html>
-    <link href="/css/highcharts.css" rel ="stylesheet">
-    <link href="/css/general.css" rel="stylesheet">
-    <link href ="/css/entry.css" rel ="stylesheet">
-    <a href ="./diary"/>Back</a>
+<html> 
+	<link href= "/css/general.css" rel="stylesheet">
+	<link href="/css/highcharts.css" rel ="stylesheet">
+	<script defer src = "/js/fontawesome-all.js"></script>
+	<div class = "container">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<a href ="./index"><i class ="fa fa-home fa-1x"></i></a>
+		<!--chart stuff-->
+
 		<title>FocusFriend</title>
+		<center>
+			<h1>Progress</h1>
+		</center>
 	</head>
 	<body>
-<script src="/js/highcharts.js"></script>
-<script src="/js/exporting.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="/js/highcharts.js"></script>
+		<script src="/js/exporting.js"></script>
 
-<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+		<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 
 
 		<script type="text/javascript">
+
 Highcharts.chart('container', {
     chart: {
         type: 'line'
@@ -53,6 +59,17 @@ Highcharts.chart('container', {
         {{/each}}
     ]
 });
+
+Highcharts.setOptions({
+    lang: {
+        drillUpText: ''
+    }
+});
 		</script>
+        <link href="/css/diary.css" rel="stylesheet">
 	</body>
+	</div>
 </html>
+
+
+

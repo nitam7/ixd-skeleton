@@ -48,7 +48,7 @@
 			<br>
 			<br>
 			<br>
-			<button onclick ="move(); calculate()">Go</button>
+			<button onclick ="move(); calculate()">Begin Session</button>
 
 
  			<!-- <div id ="percentage" class ="percentage-count">100%</div>
@@ -134,6 +134,28 @@
 
 			//calculate total productivity time. Should be 100% initially, then decrease if the user is not being producitive
 			function calculate() {
+				var timeNotFocus = 0;
+				var elem = document.getElementById("productivityBar");
+				var width = 100;
+				var focus = document.hasFocus();
+				if(document.hasFocus()){
+					
+				} else {
+					setInterval(function() {
+						timeNotFocus = timeNotFocus + 1000;
+					}, 1000);
+					var count = timeNotFocus/100;
+					var id = setInterval(frame, count);
+					function frame() {
+						if (width <= 0) {
+							clearInterval(id);
+						} else {
+							width--;
+							elem.style.width = width + '%';
+							elem.innerHTML = width * 1 + '%';
+						}
+					}
+				}
 			}
 
 			// function progressMove(){
