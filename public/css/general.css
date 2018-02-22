@@ -36,9 +36,19 @@ body {
 	font-size: 4em;
 }
 
+.container h2 {
+	font-family: CaviarDreams;
+	font-size: 3.7em;
+}
+
 .container h3 {
 	font-family: CaviarDreams;
 	font-size: 3.5em;
+}
+
+.container h4 {
+	font-family: CaviarDreams;
+	font-size: 3em;
 }
 
 .container h6 {

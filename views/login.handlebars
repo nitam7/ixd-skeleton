@@ -1,5 +1,6 @@
 <html>
 	<link href ="/css/general.css" rel="stylesheet">
+	<link href ="/css/login.css" rel="stylesheet">
 	<script defer src = "/js/fontawesome-all.js"></script>
 	<div class = "container">
 	<head>
@@ -10,22 +11,22 @@
 			<h1>Sign Up or Log In</h1>
 	</head>
 	<body>
-		<h1>Sign in to Facebook</h1>
+		<br>
+		<h4>Sign in to Facebook</h4>
 		<p class="facebookLogin">
 			<br>
-			<br>
-			<fb:login-button scope ="public_profile,email" onlogin ="checkLoginState();">
-			</fb:login-button>
+				<fb:login-button scope ="public_profile,email" onlogin ="checkLoginState();" width="300px">
+				</fb:login-button>
 			</p>
-		</div>
 		
 
-		<script type="text/javascript">
+		<!--<script type="text/javascript">
 			document.getElementById("facebook").onclick = function() {
 				alert("Connected!");
 					location.href = "./index";
 		}
 		</script>
+		-->
 
 
 		<!--<button id = "faceBookLogin"><i class="fab fa-facebook-square fa-5x"></i></button>
@@ -37,22 +38,25 @@
 			};
 		</script>
 		-->
-		<p>Sign in with email:</p>
-		<button id = "signIn">Sign In with Email</button>
-		<script type="text/javascript">
-			document.getElementById("signIn").onclick = function () {
-				location.href = "./newAccount";
-			};
-		</script>
+		<div class ="signingIn">
+			<h4>Sign in with email:</h4>
+			<button id = "signIn">Sign In with Email</button>
+			<script type="text/javascript">
+				document.getElementById("signIn").onclick = function () {
+					location.href = "./newAccount";
+				};
+			</script>
+		</div>
 		<br>
-		<p>No account?</p>
-		<button id = "signUp">Sign Up with Email:</button>
-		<script type="text/javascript">
-			document.getElementById("signUp").onclick = function () {
-				location.href = "./newAccount";
-			};
-		</script>
-
+		<div class = "signingUp">
+			<h4>No account?</h4>
+			<button id = "signUp">Sign Up with Email:</button>
+			<script type="text/javascript">
+				document.getElementById("signUp").onclick = function () {
+					location.href = "./newAccount";
+				};
+			</script>
+		</div>
 		<br>
 
 	<script src ="https://code.jquery.com/jquery.js"></script>
