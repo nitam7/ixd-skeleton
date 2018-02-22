@@ -22,23 +22,32 @@
 
 				
 				    	if(document.hasFocus()) {
-				    		setTimeout( function() {i.src = "./images/Happy1.png"},2000);
-				    		setTimeout( function() {i.src = "./images/Happy2.png"},2000);
-				    		//setTimeout( function() {i.src = "./images/Happy3.jpg"},2000);
-				    		//setInterval(foto(), 1000);
-						// var x = document.getElementById("demo");
+				    	var time = processInput();
+						console.log(time);
+						//about enough to get through all images, will change magic number to size of picpath later
+						var stagger = (time/3) + 2000;
+						console.log(stagger);
+						var picPaths = ['./images/Happy1.png','./images/Happy2.png','./images/Happy3.jpg'];
+			            var curPic = -1;
+			            //preload the images for smooth animation
+			            var imgO = new Array();
+			            for(i=0; i < picPaths.length; i++) {
+			                imgO[i] = new Image();
+			                imgO[i].src = picPaths[i];
+			            }
+
+			            function swapImage() {
+			                curPic = (++curPic > picPaths.length-1)? 0 : curPic;
+			                imgCont.src = imgO[curPic].src;
+			                setTimeout(swapImage,stagger);
+			            }
+
+			            window.onload=function() {
+			                imgCont = document.getElementById('image');
+			                swapImage();
+			            }
 				   		} else {
-				    // doc is not in focus and has been touching 
-						
-						//var x = document.getElementById("image");
-						//image.src=parsedData[0].imageURL;
-						//console.log(image)
-						//var imagu = document.getElementById("image");
 							i.src = "./images/Sad.png";
-						//image.src="./images/Sad.png";
-						//badPic();
-							console.log(image);
-					  		//document.write("doggo getting sadder");
 						}
 					}
 			</script>
