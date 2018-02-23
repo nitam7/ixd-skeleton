@@ -13,13 +13,23 @@
 			<br>
 			<br>
 			<form id="myForm" action ="./index">
-				<input type ="text" name = "petname" value = "Dogginator3000">
+				<input type ="text" name = "petname" id="name">
 				<br>
 				<br>
-				<script>
+				<br>
+				<input type = "submit" value ="Next" onclick ="store()">
+				<script type ="text/javascript">
+					function store() {
+						var input = document.getElementById("name");
+						localStorage.setItem("petname", input.value);
+					}
+					// var input = document.getElementById("name").value;
+					// localStorage.setItem("petname", input);
+					// document.getElementById("name").value = localStorage.getItem("petname");
+					// console.log(localStorage.getItem("petname"));
 
-					var pet = document.getElementsByName("petname")[0].value;
-					localStorage.setItem("petname", pet);
+					//var pet = document.getElementsByName("petname")[0].value;
+					//localStorage.setItem("petname", pet);
 					//console.log(pet);
 					//console.log("pet");
 					//console.log(petname);
@@ -27,9 +37,7 @@
 				
 
 				</script>
-				<br>
-				<br>
-				<input type = "submit" value ="Next">
+
 			</form>
 				
 

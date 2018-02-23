@@ -13,20 +13,24 @@
 			{{#each animals}}
 				<div class = "animal">
 					<h3>{{species}}</h3>
+
 					
-					<a href="./nameFriend"><img id="url" src ="{{imageURL}}" /></a>
-					
+					<a href="./nameFriend" onclick = "store();" id = "{{species}}" ><img id="url" src ="{{imageURL}}" /></a>
+
+
+					<!--
 					<script type="text/javascript">
 					$(document).ready(function () {
   
 	
-						$('#url').click(function(){
-  						localStorage.setItem("chosenAnimal", {{{species}}});
-						});
+						// $('#url').click(function(){
+  				// 		localStorage.setItem("chosenAnimal", {{{species}}});
+						// });
 
 						
 					});
 					</script>
+					-->
 
 					<p>{{description}}</p>
 					
@@ -34,6 +38,15 @@
 					<br>
 				</div>
 			{{/each}}
+
+			<script type = "text/javascript">
+						function store() {
+							var choose = document.getElementById("url").src;
+							localStorage.setItem("animalURL", choose);
+
+						}
+					</script>
+
 			<script>
 
 			var fs = require('fs')
@@ -56,11 +69,11 @@ fs.readFile('./users.json', 'utf-8', function(err, data) {
 
 				//localStorage.clear();
 	
-		$(".addressClick").click(function () {
-			        var addressValue = $(this).attr("href");
-			        var chosenAnimal = addressValue;
-			        localStorage.setItem("chosenAnimal", addressValue);
- });
+		//$(".addressClick").click(function () {
+		//	        var addressValue = $(this).attr("href");
+		//	        var chosenAnimal = addressValue;
+		//	        localStorage.setItem("chosenAnimal", addressValue);
+ //});
 
 						 
 

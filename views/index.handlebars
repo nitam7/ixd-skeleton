@@ -18,11 +18,11 @@
 			
 			<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 			
+			<a id = "images"><img id ="animal" src = "./images/cogs 120 dog.png"/></a>
 
-
-			{{#with animals.[0]}}
+			<!--{{#with animals.[0]}}
 			<a id="images"><img src ="{{imageURL}}"/></a>
-			{{/with}}
+			{{/with}}-->
 
 			<!--<img id="image" src="/images/cogs 120 bear.PNG" alt="MISSING CHARACTER PNG" > <br> -->
 	</head>
@@ -40,22 +40,24 @@
 
 
 			<script type="text/javascript">
-    			document.getElementById("login").onclick = function () {
-        			location.href = "./login";
-    			};
+    		document.getElementById("login").onclick = function () {
+       			location.href = "./login";
+    		};
 
-    			var str = location.search;
-    			var input = str.substring(str.indexOf("=") + 1);
-    			var name = localStorage.setItem("petname", input);
+    			// var str = location.search;
+    			// var input = str.substring(str.indexOf("=") + 1);
+    			// var name = localStorage.setItem("petname", input);
 
     			document.getElementById("titleName").innerHTML = localStorage.getItem("petname");
+    			console.log(localStorage.getItem("petname"));
+    			document.getElementById("animal").src = localStorage.getItem("animalURL");
     			//var name = localStorage.getItem("petuname");
-    			// var chosenAnimal = localStorage.getItem("chosenAnimal");
-    			// console.log("petuname is: " + name);
-    			// console.log("chosen animal is: " + chosenAnimal);
-    			// document.getElementById("titleAnimalType").innerHTML = chosenAnimal;
-    			// document.getElementById("titleName").innerHTML = localStorage.getItem("petuname");
-			</script>
+  				var chosenAnimal = localStorage.getItem("animalURL");
+   //  			console.log("petuname is: " + name);
+				console.log("chosen animal is: " + chosenAnimal);
+				//document.getElementById("titleAnimalType").innerHTML = chosenAnimal;
+				//document.getElementById("titleName").innerHTML = localStorage.getItem("petuname");
+			// </script>
 	</body>
 	</center>
 	</div>
