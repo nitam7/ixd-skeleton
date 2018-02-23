@@ -14,8 +14,9 @@
 				<div class = "animal">
 					<h3>{{species}}</h3>
 
-					
-					<a href="./nameFriend" onclick = "store();" id = "{{species}}" ><img id="url" src ="{{imageURL}}" /></a>
+					<button type ="submit" id = "{{id}}" value = "{{id}}" onclick ="store({{id}});"><img src = "{{imageURL}}" alt = "{{species}}"></button>
+
+					<!--<a href="./nameFriend" onclick = "store({{species}});" ><img id="{{species}}" src ="{{imageURL}}" /></a>-->
 
 
 					<!--
@@ -33,19 +34,20 @@
 					-->
 
 					<p>{{description}}</p>
-					
 					<br>
 					<br>
 				</div>
 			{{/each}}
 
 			<script type = "text/javascript">
-						function store() {
-							var choose = document.getElementById("url").src;
-							localStorage.setItem("animalURL", choose);
+				function store(i) {
+					console.log(i);
+					var input = document.getElementById(i);
+					localStorage.setItem("animalID", input.value);
+					location.href = "./nameFriend";
 
-						}
-					</script>
+				}
+			</script>
 
 			<script>
 

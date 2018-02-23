@@ -1,21 +1,25 @@
 {
 	"animals": [
 		{
+			"id" : "0",
 			"species": "Dog",
 			"description": "Man's best friend",
 			"imageURL": "./images/cogs 120 dog.png" 
 		},
 		{
+			"id": "1",
 			"species": "Bear",
 			"description": "Always wants to cuddle",
 			"imageURL": "/images/cogs 120 bear.png"
 		},
 		{
+			"id": "2",
 			"species": "Pig",
 			"description": "Oink oink!",
 			"imageURL": "/images/cogs 120 pig.png"
 		},
 		{
+			"id": "3",
 			"species": "Tiger",
 			"description": "Rawr!",
 			"imageURL": "/images/cogs 120 tiger.png"
