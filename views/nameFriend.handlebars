@@ -12,19 +12,27 @@
 			<br>
 			<br>
 			<br>
-			<form action ="./index">
-				<input type ="text" name ="petname">
+			<form id="myForm" action ="./index">
+				<input type ="text" name = "petname" value = "hi">
 				<br>
 				<br>
+				<script>
+
+					var pet = document.getElementsByName("petname")[0].value;
+					localStorage.setItem('petuname', pet);
+					//console.log(pet);
+					//console.log("pet");
+					//console.log(petname);
+				
+				
+
+				</script>
 				<br>
 				<br>
 				<input type = "submit" value ="Next">
 			</form>
-			<script>
-				function formInput() {
-					var pet = document.getElementsByName("petname")[0].value;
-				}
-			</script>
+				
+
 		</body>
 		</center>
 </html>

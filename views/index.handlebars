@@ -7,18 +7,14 @@
 		<a href ="./options"><i class="fas fa-cog fa-fw" style="background:MistyRose"></i></a>
 		<center>
 			<button id = "login">Login or Sign Up</button>
-			<script type="text/javascript">
-    			document.getElementById("login").onclick = function () {
-        			location.href = "./login";
-    			};
-    			
-			</script>
+			
 		</center>
 		
 
 		<title>Home Page</title>
 <center>
-			<h1>Biscuit</h1>
+			<h1 id="titleName"></h1>
+			
 			<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 			
 
@@ -42,11 +38,15 @@
 		<p id="demo"></p>
 
 
-	<script>
-
-
-	</script>
-
+			<script type="text/javascript">
+    			document.getElementById("login").onclick = function () {
+        			location.href = "./login";
+    			};
+    			var name = localStorage.getItem("petuname");
+    			console.log("petuname is: " + name);
+    			document.getElementById("titleName").innerHTML = "dogo";
+    			document.getElementById("titleName").innerHTML = localStorage.getItem("petuname");
+			</script>
 	</body>
 	</center>
 	</div>
