@@ -54,7 +54,7 @@ Highcharts.chart('container', {
         {{#each productivity}}
             {{beginmark}}
             name: '{{date}}',
-            data: {{series}}
+            data: [{{series}}]
             {{endmark}}
         {{/each}}
     ]

@@ -55,7 +55,7 @@
 			<br>
 			<br>
 			<br>
-			<button onclick ="move()">Begin Session</button>
+			<button onclick ="move(); calculate()">Begin Session</button>
 
 
  			<!-- <div id ="percentage" class ="percentage-count">100%</div>
@@ -66,6 +66,11 @@
  			</div> -->
 
 			<script>
+
+			var totalTime = processInput();
+			var productivityWidth = 100;
+			var timeNotFocus = 0;
+
 			function processInput() {
 				//get user's minute and hour input
 				var str = location.search;
@@ -80,7 +85,7 @@
 
 			function move() {
 				//get the total time from this function into variable time
-				var time = processInput();
+				var time = totalTime;
 				//make that progress bar move
 				var elem = document.getElementById("progressBar");
 				var width = 1;
@@ -98,7 +103,35 @@
 						width++;
 						elem.style.width = width + '%';
 						elem.innerHTML = width * 1 + '%';
-						calculate();
+					}
+				}
+			}
+
+			//calculate total productivity time. Should be 100% initially, then decrease if the user is not being producitive
+			function calculate() {
+				var time = totalTime;
+				var elem = document.getElementById("productivityBar");
+				console.log("Productivity start ", productivityWidth);
+				if(document.hasFocus() == false){
+					setInterval (function() {
+						timeNotFocus += 1000;
+					}, 1000);
+					var count = time/100;
+					var id = setInterval(frame, count);
+					function frame() {
+						if (productivityWidth <= 0) {
+							clearInterval(id);
+						} else if (document.hasFocus()) {
+							clearInterval(id);
+						} else {
+							console.log("Productivity when no Focus", productivityWidth);
+							--productivityWidth;
+							console.log("timeNotFocus = " + timeNotFocus);
+							elem.style.width = productivityWidth + '%';
+							elem.innerHTML = productivityWidth * 1 + '%';
+							console.log("Productivity after decrement", productivityWidth);
+							
+						}
 					}
 				}
 			}
@@ -141,38 +174,6 @@
 						}
 					}
 
-			//calculate total productivity time. Should be 100% initially, then decrease if the user is not being producitive
-			function calculate() {
-				var timeTotal = processInput();
-				var timeNotFocus = 0;
-				var elem = document.getElementById("productivityBar");
-				var width = 100;
-				var currentWidth = 100;
-				if(document.hasFocus() == false){
-					var counter = setInterval(function() {
-						timeNotFocus += 1000;
-							if(document.hasFocus()){
-								clearInterval(counter);
-							}
-					}, 1000);
-					console.log(timeNotFocus);
-					var count = timeTotal/100;
-					var id = setInterval(frame, count);
-					function frame() {
-						if (width <= 0) {
-							clearInterval(id);
-						} else if (document.hasFocus()) {
-							clearInterval(id);
-							width = currentWidth;
-						} else {
-							width--;
-							currentWidth--;
-							elem.style.width = width + '%';
-							elem.innerHTML = width * 1 + '%';
-						}
-					}
-				}
-			}
 
 			// function progressMove(){
 			// 	var prg = document.getElementById("progress");
@@ -205,6 +206,24 @@
 			<script>
 				function completeTask (){
 				setTimeout(function(){ alert("Good job! Go Home and rest"); }, 2000);
+				var percentage = (timeNotFocus/totalTime) * 100;
+
+					// var fs = require("fs");
+					// 	var obj {
+					// 		"beginmark": ",{",
+					// 		"date": "Tuesday",
+					// 		"category": "[0, 1]",
+					// 		"series": percentage,
+					// 		"endmark": "}"
+					// 	};
+
+					// fs.writeFile("./workdata.json", JSON.stringify(obj), (err) ==> {
+					// 	if(err){
+					// 		console.error(err);
+					// 		return;
+					// 	}
+					// 	console.log("success");
+					// });
 				}
 			</script>
 			
