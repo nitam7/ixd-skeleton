@@ -50,11 +50,14 @@
 
     			document.getElementById("titleName").innerHTML = localStorage.getItem("petname");
     			console.log(localStorage.getItem("petname"));
-    			document.getElementById("animal").src = localStorage.getItem("animalURL");
+    			//document.getElementById("animal").src = localStorage.getItem("animalURL");
     			//var name = localStorage.getItem("petuname");
-  				var chosenAnimal = localStorage.getItem("animalURL");
-   //  			console.log("petuname is: " + name);
-				console.log("chosen animal is: " + chosenAnimal);
+  				//var chosenAnimal = localStorage.getItem("animalURL");
+  				console.log(localStorage.getItem("animalID"));
+  				var pet = localStorage.getItem("animalID");
+
+  				document.getElementById("animal").src = animals[pet].imageURL;
+   				
 				//document.getElementById("titleAnimalType").innerHTML = chosenAnimal;
 				//document.getElementById("titleName").innerHTML = localStorage.getItem("petuname");
 			// </script>
