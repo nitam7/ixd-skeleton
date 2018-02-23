@@ -2,6 +2,8 @@
 	<link href="/css/general.css" rel="stylesheet">
 	<link href ="/css/choose.css" rel="stylesheet">
 	<script defer src = "/js/fontawesome-all.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
 	<div class = "container">
 	<head>
 	
@@ -11,8 +13,21 @@
 			{{#each animals}}
 				<div class = "animal">
 					<h3>{{species}}</h3>
-					<a href="./nameFriend"><img src ="{{imageURL}}" /></a>
+					
+					<a href="./nameFriend"><img id="url" src ="{{imageURL}}" /></a>
+					<script type="text/javascript">
+					$(document).ready(function () {
+  
+	
+						$('#url').click(function(){
+  						localStorage.setItem("chosenAnimal", "{{species}}");
+						});
+
+						
+					});
+					</script>
 					<p>{{description}}</p>
+					
 					<br>
 					<br>
 				</div>
