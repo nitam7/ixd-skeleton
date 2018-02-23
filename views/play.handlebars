@@ -134,9 +134,11 @@
 				}
 			}
 					//calling once makes shuffle work
-					myFunction();
+					
 					//setting as interval makes only sad work
-
+				
+						setInterval("myFunction()", 10);
+					
 
 					function myFunction() {
 				    	if(document.hasFocus()) {
@@ -146,6 +148,7 @@
 						var stagger = (time/5) + 2000;
 						console.log(stagger);
 						var picPaths = ['./images/Happy1.png','./images/Happy2.png','./images/DogHappy3.png','/images/DogHappy4.png','DogHappy5.png'];
+
 			            var curPic = -1;
 			            //preload the images for smooth animation
 			            var imgO = new Array();
@@ -163,11 +166,14 @@
 			            window.onload=function() {
 			                imgCont = document.getElementById('image');
 			                swapImage();
-			            }
-				   		} else {
-				   			var i = document.getElementById("image");
-				   			i.src="./images/Sad.png";
-							//setInterval(function() {i.src = "./images/Sad.png"}, 10);
+			            	}
+			        	}
+
+				   		else {
+				   			imgCont = document.getElementById('image');
+				   			imgCont.src="./images/Sad.png";
+							//setInterval(function() {imgCont.src = "./images/Sad.png"}, 10);
+
 						
 						}
 					}
