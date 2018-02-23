@@ -29,18 +29,19 @@
 
 			<!-- timer implemented below -->			
 			<p id="demo"></p>
-			<button onclick ="completeTask()">Click When Time's Up to Finish!</button>
 
 			<!-- PROGRESS BAR PRODUCTIVITY-->
 			<br>
-			<br>
-			<br>
+			<h4>Productivity</h4>
 			<div id ="productivityProgress">
 				<div id ="productivityBar">100%</div>
 			</div>
 			<br>
+			<br>
+			<br>
 
 			<!-- PROGRESS BAR TIME-->
+			<h4>Progress</h4>
 			<div id ="userProgress">
 				<div id ="progressBar">0%</div>
 			</div>
@@ -48,7 +49,7 @@
 			<br>
 			<br>
 			<br>
-			<button onclick ="move(); calculate()">Begin Session</button>
+			<button onclick ="move()">Begin Session</button>
 
 
  			<!-- <div id ="percentage" class ="percentage-count">100%</div>
@@ -86,10 +87,12 @@
 				function frame() {
 					if (width >= 100) {
 						clearInterval(id);
+						completeTask();
 					} else {
 						width++;
 						elem.style.width = width + '%';
 						elem.innerHTML = width * 1 + '%';
+						calculate();
 					}
 				}
 			}
@@ -134,23 +137,30 @@
 
 			//calculate total productivity time. Should be 100% initially, then decrease if the user is not being producitive
 			function calculate() {
+				var timeTotal = processInput();
 				var timeNotFocus = 0;
 				var elem = document.getElementById("productivityBar");
 				var width = 100;
-				var focus = document.hasFocus();
-				if(document.hasFocus()){
-					
-				} else {
-					setInterval(function() {
-						timeNotFocus = timeNotFocus + 1000;
+				var currentWidth = 100;
+				if(document.hasFocus() == false){
+					var counter = setInterval(function() {
+						timeNotFocus += 1000;
+							if(document.hasFocus()){
+								clearInterval(counter);
+							}
 					}, 1000);
-					var count = timeNotFocus/100;
+					console.log(timeNotFocus);
+					var count = timeTotal/100;
 					var id = setInterval(frame, count);
 					function frame() {
 						if (width <= 0) {
 							clearInterval(id);
+						} else if (document.hasFocus()) {
+							clearInterval(id);
+							width = currentWidth;
 						} else {
 							width--;
+							currentWidth--;
 							elem.style.width = width + '%';
 							elem.innerHTML = width * 1 + '%';
 						}
@@ -188,7 +198,7 @@
 			<!-- timer implemented below -->
 			<script>
 				function completeTask (){
-				setTimeout(function(){ alert("Good job! Go Home and rest"); }, 3000);
+				setTimeout(function(){ alert("Good job! Go Home and rest"); }, 2000);
 				}
 			</script>
 			
