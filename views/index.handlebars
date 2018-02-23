@@ -43,12 +43,18 @@
     			document.getElementById("login").onclick = function () {
         			location.href = "./login";
     			};
-    			var name = localStorage.getItem("petuname");
-    			var chosenAnimal = localStorage.getItem("chosenAnimal");
-    			console.log("petuname is: " + name);
-    			console.log("chosen animal is: " + chosenAnimal);
-    			document.getElementById("titleAnimalType").innerHTML = chosenAnimal;
-    			document.getElementById("titleName").innerHTML = localStorage.getItem("petuname");
+
+    			var str = location.search;
+    			var input = str.substring(str.indexOf("=") + 1);
+    			var name = localStorage.setItem("petname", input);
+
+    			document.getElementById("titleName").innerHTML = localStorage.getItem("petname");
+    			//var name = localStorage.getItem("petuname");
+    			// var chosenAnimal = localStorage.getItem("chosenAnimal");
+    			// console.log("petuname is: " + name);
+    			// console.log("chosen animal is: " + chosenAnimal);
+    			// document.getElementById("titleAnimalType").innerHTML = chosenAnimal;
+    			// document.getElementById("titleName").innerHTML = localStorage.getItem("petuname");
 			</script>
 	</body>
 	</center>
