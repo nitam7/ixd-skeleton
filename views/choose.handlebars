@@ -2,7 +2,7 @@
 	<link href="/css/general.css" rel="stylesheet">
 	<link href ="/css/choose.css" rel="stylesheet">
 	<script defer src = "/js/fontawesome-all.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
 	<div class = "container">
 	<head>
@@ -21,19 +21,50 @@
   
 	
 						$('#url').click(function(){
-						localStorage.setItem("chosenAnimal", "none");
-  						localStorage.setItem("chosenAnimal", {{species}});
+  						localStorage.setItem("chosenAnimal", {{{species}}});
 						});
 
 						
 					});
 					</script>
+
 					<p>{{description}}</p>
 					
 					<br>
 					<br>
 				</div>
 			{{/each}}
+			<script>
+
+			var fs = require('fs')
+
+fs.readFile('./users.json', 'utf-8', function(err, data) {
+	if (err) throw err
+
+	var arrayOfObjects = JSON.parse(data)
+	arrayOfObjects.users.push({
+		url: "chosenAnimalfromChoose"
+	})
+
+	console.log(arrayOfObjects)
+
+	fs.writeFile('./users.json', JSON.stringify(arrayOfObjects), 'utf-8', function(err) {
+		if (err) throw err
+		console.log('Done!')
+	})
+})	
+
+				//localStorage.clear();
+	
+		$(".addressClick").click(function () {
+			        var addressValue = $(this).attr("href");
+			        var chosenAnimal = addressValue;
+			        localStorage.setItem("chosenAnimal", addressValue);
+ });
+
+						 
+
+			</script>
 	</head>
 <body>
 </body>
