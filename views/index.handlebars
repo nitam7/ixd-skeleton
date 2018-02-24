@@ -20,46 +20,52 @@
 			
 			<a id = "images"><img id ="animal" src = "./images/cogs 120 dog.png"/></a>
 
-			<!--{{#with animals.[0]}}
-			<a id="images"><img src ="{{imageURL}}"/></a>
-			{{/with}}-->
-
-			<!--<img id="image" src="/images/cogs 120 bear.PNG" alt="MISSING CHARACTER PNG" > <br> -->
 	</head>
 	<body>
 		<p>
-			<a href ="./diary">Diary</a>
+			<a href ="./playTime">Play</a>
 		</p>
 		<p> 
-			
 		</p>
 		<p>
-			<a href ="./playTime">Play</a>
+			<a href ="./diary">Diary</a>
 		</p>
 		<p id="demo"></p>
 
-
 			<script type="text/javascript">
+
     		document.getElementById("login").onclick = function () {
        			location.href = "./login";
     		};
 
-    			// var str = location.search;
-    			// var input = str.substring(str.indexOf("=") + 1);
-    			// var name = localStorage.setItem("petname", input);
-
+    		//name
     			document.getElementById("titleName").innerHTML = localStorage.getItem("petname");
     			console.log(localStorage.getItem("petname"));
-    			//document.getElementById("animal").src = localStorage.getItem("animalURL");
-    			//var name = localStorage.getItem("petuname");
-  				//var chosenAnimal = localStorage.getItem("animalURL");
+
+  			//index
   				console.log(localStorage.getItem("animalID"));
   				var pet = localStorage.getItem("animalID");
 
-  				document.getElementById("animal").src = animals[pet].imageURL;
+  			//logic to set url
+  			 if (pet == 0) {
+  			 	document.getElementById("animal").src = "./images/DogHouse.png";
+  			 }
+  			  if (pet == 1) {
+  			 	document.getElementById("animal").src = "./images/BearHouse.png";
+  			 }
+  			  if (pet == 2) {
+  			 	document.getElementById("animal").src = "./images/PigHouse.png";
+  			 }
+  			 if (pet == 3)  {
+  			 	document.getElementById("animal").src = "./images/TigerHouse.png";
+  			 }
+  				
+  			//send current url
+  				console.log(document.getElementById("animal").src);
+  				localStorage.setItem("animalUrl", document.getElementById("animal").src);
+
+
    				
-				//document.getElementById("titleAnimalType").innerHTML = chosenAnimal;
-				//document.getElementById("titleName").innerHTML = localStorage.getItem("petuname");
 			// </script>
 	</body>
 	</center>

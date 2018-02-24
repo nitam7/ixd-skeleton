@@ -11,24 +11,18 @@
 			<h1>Focus Together!</h1>
 			<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 				
-	
-			​
+
 				{{#with animals.[0]}}
 						<img id ="image" src ="{{imageURL}}"/>
-					{{/with}} 
+				{{/with}} 
 
 
-
-					
 	
 
 	</head>
 	<body>
 
-<!-- 			{{#each animals}}
-						<a id="image"><img src ="{{imageURL}}"/></a> 
-			{{/each}} -->
-		<!-- we should put their chosen animal var here later -->
+
 		
 
 			<!-- timer implemented below -->			
@@ -133,25 +127,44 @@
 					}
 				}
 			}
-					//calling once makes shuffle work
 					
-					//setting as interval makes only sad work
-				
+						
+						var animalUrl = localStorage.getItem("animalUrl");
+						console.log(animalUrl);
+						//logic to set picPaths
+			  			 if (animalUrl == "http://localhost:3000/images/DogHouse.png") {
+			  			 	var picPaths = ['./images/Happy1.png','./images/Happy2.png','./images/DogHappy3.png','/images/DogHappy4.png','/images/DogHappy5.png']
+			  			 	var sadPicPaths = ['./images/Sad.png','./images/DogSad2.png','./images/DogSad3.png']
+			  			 
+			  			 }
+			  			  if (animalUrl == "http://localhost:3000/images/BearHouse.png") {
+			  			  	var picPaths = ['./images/BearHappy1.png','./images/BearHappy2.png','./images/BearHappy3.png','./images/BearHappy4.png','./images/BearHappy5.png']
+			  			  	var sadPicPaths = ['./images/BearSad1.png','./images/BearSad2.png','./images/BearSad3.png']
+			  			 
+			  			 }
+			  			  if (animalUrl == "http://localhost:3000/images/PigHouse.png") {
+			  			  		var picPaths = ['./images/PigHappy1.png','./images/PigHappy2.png','./images/PigHappy3.png','./images/PigHappy4.png','PigHappy5.png']
+			  			  		var sadPicPaths = ['./images/PigSad1.png','./images/PigSad2.png','./images/PigSad3.png']
+			  			 	 	
+			  			 }
+			  			 if (animalUrl == "http://localhost:3000/images/TigerHouse.png")  {
+			  			  	var picPaths = ['./images/TigerHappy1.png','./images/TigerHappy2.png','./images/TigerHappy3.png','./images/TigerHappy4.png','./images/TigerHappy5.png']
+			  			  	var sadPicPaths = ['./images/TigerSad1.png','./images/TigerSad2.png','./images/TigerSad3.png']
+
+			  			 }
 						setInterval("myFunction()", 10);
-					
+						
+
+
+						
 
 					function myFunction() {
 				    	if(document.hasFocus()) {
+
 				    	var time = processInput();
-						console.log(time);
 						//about enough to get through all images, will change magic number to size of picpath later
 						var stagger = (time/5) + 2000;
-						console.log(stagger);
-						var picPaths = ['./images/Happy1.png','./images/Happy2.png','./images/DogHappy3.png','/images/DogHappy4.png','/images/DogHappy5.png'];
-						//var picPathsPig = ['./images/PigHappy1.png','./images/PigHappy2.png','./images/PigHappy3.png','./images/PigHappy4.png','PigHappy5.png'];
-						//var picPathTiger = ['./images/TigerHappy1.png','./images/TigerHappy2.png','./images/TigerHappy3.png','./images/TigerHappy4.png','./images/TigerHappy5.png']
-						//var picPathsBear = ['./images/BearHappy1.png'.'./images/BearHappy2.png','./images/BearHappy3.png','./images/BearHappy4.png','./images/BearHappy5.png']
-
+		
 			            var curPic = -1;
 			            //preload the images for smooth animation
 			            var imgO = new Array();
@@ -174,7 +187,10 @@
 
 				   		else {
 				   			imgCont = document.getElementById('image');
-				   			imgCont.src="./images/Sad.png";
+				   			for (i=0; i < sadPicPaths.length; i++) {
+				   			imgCont.src = sadPicPaths[i]; 
+				   			}
+				   			
 							//setInterval(function() {imgCont.src = "./images/Sad.png"}, 10);
 
 						

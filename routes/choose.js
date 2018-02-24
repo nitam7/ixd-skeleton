@@ -13,7 +13,7 @@ fs.readFile('./users.json', 'utf-8', function(err, data) {
 
 	var arrayOfObjects = JSON.parse(data)
 	arrayOfObjects.users.push({
-		url: "chosenAnimal"
+		
 	})
 
 	console.log(arrayOfObjects)
