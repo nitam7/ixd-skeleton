@@ -143,7 +143,7 @@
 			  			 
 			  			 }
 			  			  if (animalUrl == "http://localhost:3000/images/PigHouse.png") {
-			  			  		var picPaths = ['./images/PigHappy1.png','./images/PigHappy2.png','./images/PigHappy3.png','./images/PigHappy4.png','PigHappy5.png']
+			  			  		var picPaths = ['./images/PigHappy1.png','./images/PigHappy2.png','./images/PigHappy3.png','./images/PigHappy4.png','./images/PigHappy5.png']
 			  			  		var sadPicPaths = ['./images/PigSad1.png','./images/PigSad2.png','./images/PigSad3.png']
 			  			 	 	
 			  			 }
@@ -157,7 +157,7 @@
 
 
 						
-
+					var done = false;
 					function myFunction() {
 				    	if(document.hasFocus()) {
 
@@ -183,13 +183,19 @@
 			                imgCont = document.getElementById('image');
 			                swapImage();
 			            	}
+
+			            done = false;
+
 			        	}
+
 
 				   		else {
 				   			imgCont = document.getElementById('image');
 				   			for (i=0; i < sadPicPaths.length; i++) {
 				   			imgCont.src = sadPicPaths[i]; 
 				   			}
+				   			
+				   			offPage(done);
 				   			
 							//setInterval(function() {imgCont.src = "./images/Sad.png"}, 10);
 
@@ -248,6 +254,13 @@
 					// 	console.log("success");
 					// });
 				}
+
+				function offPage () {
+					if (done == false) {
+						setTimeout(function(){ alert("Your friend became sad when you lost focus"); }, 2000);
+						done = true;
+						}
+					}
 			</script>
 			
 	</body>
