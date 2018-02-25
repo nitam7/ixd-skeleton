@@ -47,8 +47,13 @@
 			<br>
 			<br>
 			<br>
-			<button onclick ="move(); calculate()">Begin Session</button>
+			<button id="clickButton" onclick ="move(); calculate()">Begin Session</button>
 
+			<script type="text/javascript">
+				$(document).ready(function(){
+				    $("#clickButton").trigger('click'); 
+				});
+			</script>
 
  			<!-- <div id ="percentage" class ="percentage-count">100%</div>
  				<div class ="progress-bar">
