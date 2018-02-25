@@ -160,7 +160,6 @@
 					var done = false;
 					function myFunction() {
 				    	if(document.hasFocus()) {
-
 				    	var time = processInput();
 						//about enough to get through all images, will change magic number to size of picpath later
 						var stagger = (time/5) + 2000;
@@ -184,7 +183,7 @@
 			                swapImage();
 			            	}
 
-			            done = false;
+			            done = true;
 
 			        	}
 
@@ -213,7 +212,7 @@
 			<script>
 				function completeTask (){
 				setTimeout(function(){ alert("Good job! Go Home and rest"); }, 2000);
-				var percentage = (timeNotFocus/totalTime) * 100;
+				var percentage = productivityWidth;
 				localStorage.setItem("percent", percentage);
 
 					// var fs = require("fs");

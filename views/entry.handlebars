@@ -21,8 +21,14 @@
 		<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 
-
 		<script type="text/javascript">
+        var point = localStorage.getItem("percent");
+        var d = new Date();
+        var days = ["Sun", "M", "T", "W", "Th", "F", "Sat"];
+        var dayToday = days[d.getDay()];
+            if(dayToday == "Sun"){
+                
+            }
 
 Highcharts.chart('container', {
     chart: {
@@ -35,7 +41,7 @@ Highcharts.chart('container', {
         text: 'Productivity Levels'
     },
     xAxis: {
-        categories: ['0', '1', '2', '3', '4', '5', '6']
+        categories: ['Sun', 'M', 'T', 'W', 'Th', 'F', 'Sat']
     },
     yAxis: {
         title: {
