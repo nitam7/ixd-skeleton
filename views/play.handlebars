@@ -47,7 +47,7 @@
 			<br>
 			<br>
 			<br>
-			//<button id="clickButton" onclick ="move();">Begin Session</button>
+			<button id="clickButton" onclick ="move();">Begin Session</button>
 
 			<script type="text/javascript">
 				$(document).ready(function(){
@@ -130,24 +130,27 @@
 					
 						
 						var animalUrl = localStorage.getItem("animalUrl");
-						console.log(animalUrl);
+						var split = animalUrl.split("/");
+						console.log(split[4]);
+						 if (split[4] == "BearHouse.png") {
+						 						 	console.log("equals"); }
 						//logic to set picPaths
-			  			 if (animalUrl == "http://localhost:3000/images/DogHouse.png") {
+			  			 if (split[4] == "DogHouse.png") {
 			  			 	var picPaths = ['./images/Happy1.png','./images/Happy2.png','./images/DogHappy3.png','/images/DogHappy4.png','/images/DogHappy5.png']
 			  			 	var sadPicPaths = ['./images/Sad.png','./images/DogSad2.png','./images/DogSad3.png']
 			  			 
 			  			 }
-			  			  if (animalUrl == "http://localhost:3000/images/BearHouse.png") {
+			  			  if (split[4] == "BearHouse.png") {
 			  			  	var picPaths = ['./images/BearHappy1.png','./images/BearHappy2.png','./images/BearHappy3.png','./images/BearHappy4.png','./images/BearHappy5.png']
 			  			  	var sadPicPaths = ['./images/BearSad1.png','./images/BearSad2.png','./images/BearSad3.png']
 			  			 
 			  			 }
-			  			  if (animalUrl == "http://localhost:3000/images/PigHouse.png") {
+			  			  if (split[4] == "PigHouse.png") {
 			  			  		var picPaths = ['./images/PigHappy1.png','./images/PigHappy2.png','./images/PigHappy3.png','./images/PigHappy4.png','./images/PigHappy5.png']
 			  			  		var sadPicPaths = ['./images/PigSad1.png','./images/PigSad2.png','./images/PigSad3.png']
 			  			 	 	
 			  			 }
-			  			 if (animalUrl == "http://localhost:3000/images/TigerHouse.png")  {
+			  			 if (split[4] == "TigerHouse.png")  {
 			  			  	var picPaths = ['./images/TigerHappy1.png','./images/TigerHappy2.png','./images/TigerHappy3.png','./images/TigerHappy4.png','./images/TigerHappy5.png']
 			  			  	var sadPicPaths = ['./images/TigerSad1.png','./images/TigerSad2.png','./images/TigerSad3.png']
 
