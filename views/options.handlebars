@@ -1,5 +1,6 @@
 <html>
 	<link href ="/css/general.css" rel ="stylesheet">
+	<link href ="/css/options.css" rel ="stylesheet">
 	<script defer src = "/js/fontawesome-all.js"></script>
 	<div class ="container">
 	<head>
@@ -7,6 +8,7 @@
 		<title>FocusFriend</title>
 		<center>
 			<h1>Options</h1>
+		</center>
 	</head>
 	<body>
 		<p>Account information here</p>
@@ -14,6 +16,16 @@
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
 		<script src="/js/facebook.js"></script>
+
+		<center>
+		<button id = "logout">Log Out</button>
+		</center>
+
+		<script type ="text/javascript">
+			document.getElementById("logout").onclick = function () {
+				location.href = "./welcome";
+			};
+		</script>
 	</body>
 	</div>
 </html>

@@ -47,7 +47,7 @@
 			<br>
 			<br>
 			<br>
-			<button id="clickButton" onclick ="move(); calculate()">Begin Session</button>
+			//<button id="clickButton" onclick ="move();">Begin Session</button>
 
 			<script type="text/javascript">
 				$(document).ready(function(){
@@ -160,7 +160,6 @@
 					var done = false;
 					function myFunction() {
 				    	if(document.hasFocus()) {
-
 				    	var time = processInput();
 						//about enough to get through all images, will change magic number to size of picpath later
 						var stagger = (time/5) + 2000;
@@ -183,8 +182,8 @@
 			                imgCont = document.getElementById('image');
 			                swapImage();
 			            	}
+			            done = true;
 
-			           // done = false;
 
 			        	}
 
@@ -193,38 +192,16 @@
 				   			imgCont = document.getElementById('image');
 				   			for (i=0; i < sadPicPaths.length; i++) {
 				   			imgCont.src = sadPicPaths[i]; 
+
 				   			}
-				   			
 				   			offPage(done);
+				   			calculate();
+
 				   			
 							//setInterval(function() {imgCont.src = "./images/Sad.png"}, 10);
-
 						
 						}
 					}
-
-
-			// function progressMove(){
-			// 	var prg = document.getElementById("progress");
-			// 	var percent = document.getElementById("percentage");
-			// 	var count = 5;
-			// 	var progress = 0;
-			// 	var id = setInterval(frame, 50);
-
-			// 	function frame() {
-			// 		if (progress == 20 && count == 100) {
-			// 			clearInterval(id);
-			// 		} else {
-			// 			progress += 1;
-			// 			count += 10;
-			// 			prg.style.width = progress + 'em';
-			// 			percent.innerHTML = count + '%';
-			// 		}
-			// 	}
-
-			// }
-
-			// progressMove();
 
 			</script>
 
@@ -235,7 +212,8 @@
 			<script>
 				function completeTask (){
 				setTimeout(function(){ alert("Good job! Go Home and rest"); }, 2000);
-				var percentage = (timeNotFocus/totalTime) * 100;
+				var percentage = productivityWidth;
+				localStorage.setItem("percent", percentage);
 
 					// var fs = require("fs");
 					// 	var obj {
@@ -258,6 +236,7 @@
 				function offPage () {
 					if (done == false) {
 						setTimeout(function(){ alert("Your friend became sad when you lost focus"); }, 2000);
+						clearTimeout();
 						done = true;
 						}
 					}
