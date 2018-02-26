@@ -51,6 +51,7 @@
 
 			<script type="text/javascript">
 				$(document).ready(function(){
+					console.log("triggered");
 				    $("#clickButton").trigger('click'); 
 				    $("#clickButton").hide();
 				});
@@ -185,7 +186,7 @@
 			                imgCont = document.getElementById('image');
 			                swapImage();
 			            	}
-			            done = true;
+			            done = false;
 
 
 			        	}
@@ -199,6 +200,7 @@
 				   			}
 				   			offPage(done);
 				   			calculate();
+
 
 				   			
 							//setInterval(function() {imgCont.src = "./images/Sad.png"}, 10);
