@@ -33,31 +33,37 @@ body {
 
 .container h1{
 	font-family: CaviarDreams;
+	src: url(/fonts/CaviarDreams.ttf);
 	font-size: 4em;
 }
 
 .container h2 {
 	font-family: CaviarDreams;
+	src: url(/fonts/CaviarDreams.ttf);
 	font-size: 3.7em;
 }
 
 .container h3 {
 	font-family: CaviarDreams;
+	src: url(/fonts/CaviarDreams.ttf);
 	font-size: 3.5em;
 }
 
 .container h4 {
 	font-family: CaviarDreams;
+	src: url(/fonts/CaviarDreams.ttf);
 	font-size: 3em;
 }
 
 .container h6 {
 	font-family: CaviarDreams;
+	src: url(/fonts/CaviarDreams.ttf);
 	font-size: 1em;
 }
 
 form {
 	font-family: CaviarDreams;
+	src: url(/fonts/CaviarDreams.ttf);
 	font-size: 2em;
 }
 
@@ -88,6 +94,7 @@ input[type=PASSWORD], select {
 
 input[type=submit] {
 	font-family: CaviarDreams;
+	src: url(/fonts/CaviarDreams.ttf);
 	width: 40rem;
 	height: 5rem;
 	background-color: #ffffff;
