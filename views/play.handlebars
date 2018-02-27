@@ -186,8 +186,6 @@
 			                imgCont = document.getElementById('image');
 			                swapImage();
 			            	}
-			            done = false;
-
 
 			        	}
 
@@ -196,10 +194,10 @@
 				   			imgCont = document.getElementById('image');
 				   			for (i=0; i < sadPicPaths.length; i++) {
 				   			imgCont.src = sadPicPaths[i]; 
-
-				   			}
 				   			offPage(done);
 				   			calculate();
+				   			}
+				   			
 
 
 				   			
@@ -219,6 +217,7 @@
 				setTimeout(function(){ alert("Good job! Go Home and rest"); }, 2000);
 				var percentage = productivityWidth;
 				localStorage.setItem("percent", percentage);
+				done = true;
 
 					// var fs = require("fs");
 					// 	var obj {
@@ -242,7 +241,6 @@
 					if (done == false) {
 						setTimeout(function(){ alert("Your friend became sad when you lost focus"); }, 2000);
 						clearTimeout();
-						done = true;
 						}
 					}
 			</script>
