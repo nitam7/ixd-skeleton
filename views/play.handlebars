@@ -162,8 +162,10 @@
 
 						
 					var done = false;
+					var off = true;
 					function myFunction() {
 				    	if(document.hasFocus()) {
+				    	off = false;
 				    	var time = processInput();
 						//about enough to get through all images, will change magic number to size of picpath later
 						var stagger = (time/5) + 2000;
@@ -194,7 +196,8 @@
 				   			imgCont = document.getElementById('image');
 				   			for (i=0; i < sadPicPaths.length; i++) {
 				   			imgCont.src = sadPicPaths[i]; 
-				   			offPage(done);
+				   			off = true;
+				   			offPage();
 				   			calculate();
 				   			}
 				   			
@@ -203,6 +206,14 @@
 				   			
 							//setInterval(function() {imgCont.src = "./images/Sad.png"}, 10);
 						
+						}
+					}
+
+					function offPage () {
+					if (done == false && off == true) {
+						setTimeout(function(){ alert("Your friend became sad when you lost focus"); document.setActive();}, 2000);
+						clearTimeout();
+						off = false;
 						}
 					}
 
@@ -242,12 +253,6 @@
 					});
 				}
 
-				function offPage () {
-					if (done == false) {
-						setTimeout(function(){ alert("Your friend became sad when you lost focus"); }, 2000);
-						clearTimeout();
-						}
-					}
 			</script>
 			<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114835551-1"></script>
