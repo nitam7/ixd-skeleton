@@ -133,10 +133,9 @@
 						var animalUrl = localStorage.getItem("animalUrl");
 						var split = animalUrl.split("/");
 						console.log(split[4]);
-						 if (split[4] == "BearHouse.png") {
-						 						 	console.log("equals"); }
+					
 						//logic to set picPaths
-			  			 if (split[4] == "DogHouse.png") {
+			  			 if ((split[4] == "DogHouse.png")||(split[4] == null)||(split[4] == undefined)) {
 			  			 	var picPaths = ['./images/Happy1.png','./images/Happy2.png','./images/DogHappy3.png','/images/DogHappy4.png','/images/DogHappy5.png']
 			  			 	var sadPicPaths = ['./images/Sad.png','./images/DogSad2.png','./images/DogSad3.png']
 			  			 
@@ -156,6 +155,7 @@
 			  			  	var sadPicPaths = ['./images/TigerSad1.png','./images/TigerSad2.png','./images/TigerSad3.png']
 
 			  			 }
+			  		
 						setInterval("myFunction()", 10);
 						
 
