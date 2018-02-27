@@ -18,6 +18,8 @@ body {
 }
 
 .container p {
+	font-family: CaviarDreams;
+	src: url(/fonts/CaviarDreams.ttf);
 	font-size: 2.5em;
 }
 
