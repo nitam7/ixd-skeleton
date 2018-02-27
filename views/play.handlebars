@@ -214,27 +214,32 @@
 			<!-- timer implemented below -->
 			<script>
 				function completeTask (){
+				done = true;
 				setTimeout(function(){ alert("Good job! Go Home and rest"); }, 2000);
 				var percentage = productivityWidth;
 				localStorage.setItem("percent", percentage);
-				done = true;
 
-					// var fs = require("fs");
-					// 	var obj {
-					// 		"beginmark": ",{",
-					// 		"date": "Tuesday",
-					// 		"category": "[0, 1]",
-					// 		"series": percentage,
-					// 		"endmark": "}"
-					// 	};
+					var point = localStorage.getItem("percent");
+       				var d = new Date();
+        			var days = ["Sun", "M", "T", "W", "Th", "F", "Sat"];
+        			var dayToday = days[d.getDay()];
+            		if(dayToday == "Sun"){
+                
+            		}
 
-					// fs.writeFile("./workdata.json", JSON.stringify(obj), (err) ==> {
-					// 	if(err){
-					// 		console.error(err);
-					// 		return;
-					// 	}
-					// 	console.log("success");
-					// });
+					var fs = require("fs");
+						var obj {
+							"date": "Tuesday",
+							"series": percentage
+						};
+
+					fs.writeFile("./workdata.json", JSON.stringify(obj), (err) ==> {
+						if(err){
+							console.error(err);
+							return;
+						}
+						console.log("success");
+					});
 				}
 
 				function offPage () {

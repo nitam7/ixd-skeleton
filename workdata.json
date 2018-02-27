@@ -1,19 +1,12 @@
 {
 	"productivity": [
 		{
-			"beginmark": "{",
-			"date": "This week",
-			"category": "[0, 1, 2, 3, 4]",
-			"series": "100, 80, 85, 70, 80",
-			"endmark": "},"
+			"date": "Sun",
+			"series": "100"
 		},
-		{
-			"beginmark": "{",
-			"date": "Yesterday",
-			"category": "[0, 1, 2]",
-			"series": "100, 90, 95",
-			"endmark": "}"
+		{ 
+			"data": "M",
+			"series": "90"
 		}
-
 	]
 }

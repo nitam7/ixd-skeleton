@@ -21,21 +21,30 @@
 		<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 
-		<script type="text/javascript">
-        var point = localStorage.getItem("percent");
-        var d = new Date();
-        var days = ["Sun", "M", "T", "W", "Th", "F", "Sat"];
-        var dayToday = days[d.getDay()];
-            if(dayToday == "Sun"){
-                
-            }
 
+		<script type ="text/javascript">
+        
+
+        $.getJSON ("./workdata.json", function (json) {
+            var array = [];
+            for (var key in json) {
+                if (json.hasOwnProperty(key)) {
+                    var item = json[key];
+                    array.push({
+                        date: item.date,
+                        series: item.series
+
+                    });
+                }
+            }
+        });
+        console.log(array);
 Highcharts.chart('container', {
     chart: {
         type: 'line'
     },
     title: {
-        text: '{{date}}'
+        text: 'This Week'
     },
     subtitle: {
         text: 'Productivity Levels'
@@ -57,12 +66,13 @@ Highcharts.chart('container', {
         }
     },
     series: [
-        {{#each productivity}}
-            {{beginmark}}
-            name: '{{date}}',
-            data: [{{series}}]
-            {{endmark}}
-        {{/each}}
+         {
+        //     data: [
+        // {{#each productivity}}
+        //     {{series}}
+        // {{/each}}
+        //     ]
+        }
     ]
 });
 
