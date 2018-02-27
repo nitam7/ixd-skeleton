@@ -7,3 +7,5 @@ exports.view = function(req, res){
 	console.log(workdata);
   	res.render('entry', workdata);
 };
+
+

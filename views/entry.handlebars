@@ -2,6 +2,7 @@
 	<link href= "/css/general.css" rel="stylesheet">
 	<link href="/css/highcharts.css" rel ="stylesheet">
 	<script defer src = "/js/fontawesome-all.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 	<div class = "container">
 	<head>
 		<a href ="./index"><i class ="fa fa-home fa-1x"></i></a>
@@ -24,8 +25,9 @@
 
 		<script type ="text/javascript">
         
+        var work = require("../workdata.json");
 
-        $.getJSON ("./workdata.json", function (json) {
+        $.getJSON (work, function (json) {
             var array = [];
             for (var key in json) {
                 if (json.hasOwnProperty(key)) {
@@ -37,8 +39,9 @@
                     });
                 }
             }
+            console.log(array);
         });
-        console.log(array);
+
 Highcharts.chart('container', {
     chart: {
         type: 'line'
