@@ -2,7 +2,7 @@ function completeTask (){
     done = true;
     setTimeout(function(){ alert("Good job! Go Home and rest"); }, 2000);
 	var percentage = productivityWidth;
-	localStorage.setItem("percent", percentage);
+	//localStorage.setItem("percent", percentage);
 
 					var point = localStorage.getItem("percent");
        				var d = new Date();
@@ -11,16 +11,42 @@ function completeTask (){
             		if(dayToday == "Sun"){
                 
             		}
+        
+        var a = [percentage];
+        a = JSON.parse(localStorage.getItem("percent"));
+        a.push(percentage);
+        localStorage.setItem("percent", JSON.stringify(a));
+        console.log(localStorage.getItem("percent"));
+     // writeJSON();
+ }
 
-					var fs = require("fs");
-					var lineGraph = ["Sun", "M", "T", "W", "Th", "F", "Sat"];
 
 
-					/*fs.writeFile("./workdata.json", JSON.stringify(lineGraph), (err) ==> {
-						if(err){
-							console.error(err);
-							return;
-						}
-						console.log("success");
-					});*/
-				}
+
+
+// function writeJSON () {
+//         $.getJSON("../workdata", function(json) {
+//         var array = [];
+//             for (var key in json) {
+// 				if (json.hasOwnProperty(key)) {
+// 			        var item = json[key];
+// 			        array.push({
+// 			            date: item.date,
+// 			            series: item.series
+
+// 			    	});
+// 			    }
+// 			}
+// 		});
+// 		var fs = require("fs");
+// 		var lineGraph = [];
+
+
+// 		fs.writeFile("./workdata.json", JSON.stringify(percentage), (err) => {
+// 			if(err){
+// 				console.error(err);
+// 				return;
+// 			}
+// 				console.log("success");
+// 		});
+//}

@@ -27,6 +27,11 @@
     			document.getElementById("choose").onclick = function () {
         			location.href = "./choose";
     			};
+
+    			var a = []
+    			localStorage.setItem("percent", JSON.stringify(a));
+        		a.push(JSON.parse(localStorage.getItem("percent")));
+        		console.log(localStorage.getItem("percent"));
 			</script>
 	</head>
 	<body>

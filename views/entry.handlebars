@@ -24,23 +24,22 @@
 
 
 		<script type ="text/javascript">
-        
-        var work = require("../workdata.json");
 
-        $.getJSON (work, function (json) {
-            var array = [];
-            for (var key in json) {
-                if (json.hasOwnProperty(key)) {
-                    var item = json[key];
-                    array.push({
-                        date: item.date,
-                        series: item.series
+        // $.getJSON ("../workdata.json", function (json) {
+        //     var array = [];
+        //     for (var key in json) {
+        //         if (json.hasOwnProperty(key)) {
+        //             var item = json[key];
+        //             array.push({
+        //                 date: item.date,
+        //                 series: item.series
 
-                    });
-                }
-            }
-            console.log(array);
-        });
+        //             });
+        //         }
+        //     }
+        //     console.log(array);
+        // });
+        var percentData = JSON.parse(localStorage.getItem("percent"));
 
 Highcharts.chart('container', {
     chart: {
@@ -70,11 +69,8 @@ Highcharts.chart('container', {
     },
     series: [
          {
-        //     data: [
-        // {{#each productivity}}
-        //     {{series}}
-        // {{/each}}
-        //     ]
+            name: "This Week",
+            data: percentData
         }
     ]
 });
