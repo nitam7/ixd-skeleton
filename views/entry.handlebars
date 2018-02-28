@@ -19,6 +19,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="/js/highcharts.js"></script>
+        <script src="/js/annotations.js"></script>
 		<script src="/js/exporting.js"></script>
 
 		<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
@@ -48,13 +49,13 @@ Highcharts.chart('container', {
         type: 'line'
     },
     title: {
-        text: 'This Week'
+        text: '5 Most Recent'
     },
     subtitle: {
         text: 'Productivity Levels'
     },
     xAxis: {
-        categories: ['Sun', 'M', 'T', 'W', 'Th', 'F', 'Sat']
+        categories: ['1', '2', '3', '4', '5']
     },
     yAxis: {
         title: {
@@ -71,7 +72,8 @@ Highcharts.chart('container', {
     },
     series: [
          {
-            name: "This Week",
+            name: "Recent Sessions",
+            color: "#E9C46A",
             marker: {
                 symbol: 'url(/images/pawprint.png)'
             },
