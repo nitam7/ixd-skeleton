@@ -2,30 +2,31 @@
 	<link href ="/css/general.css" rel ="stylesheet">
 	<link href ="/css/options.css" rel ="stylesheet">
 	<script defer src = "/js/fontawesome-all.js"></script>
-	<div class ="container">
 	<head>
-		<a href ="./index"><i class ="fa fa-home fa-3x"></i></a>
 		<title>FocusFriend</title>
-		<center>
-			<h1>Options</h1>
-		</center>
 	</head>
 	<body>
-		<p>Account information here</p>
-		</center>
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="/js/bootstrap.min.js"></script>
-		<script src="/js/facebook.js"></script>
+		<div class ="container">
+			<a href ="./index"><i class ="fa fa-home fa-3x"></i></a>
+			<center>
+				<h1>Options</h1>
+				<p>Account information here</p>
+				<script src="https://code.jquery.com/jquery.js"></script>
+				<script src="/js/bootstrap.min.js"></script>
+				<script src="/js/facebook.js"></script>
 
-		<center>
-		<button id = "logout">Log Out</button>
-		</center>
+				<center>
+				<button id = "logout">Log Out</button>
+				</center>
 
-		<script type ="text/javascript">
-			document.getElementById("logout").onclick = function () {
-				location.href = "./welcome";
-			};
-		</script>
+				<script type ="text/javascript">
+					sessionStorage.removeItem("logged");
+					sessionStorage.setItem("logged", "false");
+					document.getElementById("logout").onclick = function () {
+						location.href = "./welcome";
+					};
+				</script>
+		</center>
 	</body>
 	</div>
 </html>

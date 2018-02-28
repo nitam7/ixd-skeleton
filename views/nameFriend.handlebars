@@ -1,44 +1,68 @@
 <html>
 	<link href ="/css/general.css" rel="stylesheet">
 	<script defer src = "/js/fontawesome-all.js"></script>
-	<div class = "container">
 	<head>
 	
-				<title>FocusFriend</title>
-		<center>
-			<h1>Name your friend</h1>			
+				<title>FocusFriend</title>			
 	</head>
 		<body>
-			<br>
-			<br>
-			<br>
-			<form id="myForm" action ="./index">
-				<input type ="text" name = "petname" id="name">
+			<div class = "container">
+			<center>
+				<h1>Name your friend</h1>
 				<br>
-				<br>
-				<br>
-				<input type = "submit" value ="Next" onclick ="store()">
-				<script type ="text/javascript">
-					function store() {
-						var input = document.getElementById("name");
-						localStorage.setItem("petname", input.value);
-					}
-				
+				<a id = "images"><img id ="animal" src = "./images/cogs 120 dog.png"/></a>
+				<script type="text/javascript">
+					var pet = localStorage.getItem("animalID");
+
+  					//logic to set url
+		  			 if (pet == 0) {
+		  			 	document.getElementById("animal").src = "./images/cogs 120 dog.png";
+		  			 }
+		  			  if (pet == 1) {
+		  			 	document.getElementById("animal").src = "./images/cogs 120 bear.png";
+		  			 }
+		  			  if (pet == 2) {
+		  			 	document.getElementById("animal").src = "./images/cogs 120 pig.png";
+		  			 }
+		  			 if (pet == 3)  {
+		  			 	document.getElementById("animal").src = "./images/cogs 120 tiger.png";
+		  			 }
+		  				
+		  			//send current url
+		  				console.log(document.getElementById("animal").src);
+		  				localStorage.setItem("animalUrl", document.getElementById("animal").src);
 
 				</script>
+				<br>
+				<br>
+				<br>
+				<form id="myForm" action ="./index">
+					<input type ="text" name = "petname" id="name">
+					<br>
+					<br>
+					<br>
+					<input type = "submit" value ="Next" onclick ="store()">
+					<script type ="text/javascript">
+						function store() {
+							var input = document.getElementById("name");
+							localStorage.setItem("petname", input.value);
+						}
+					
 
-			</form>
-				
+					</script>
+
+				</form>
+					
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114835551-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114835551-1"></script>
+			<script>
+			  window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
 
-  gtag('config', 'UA-114835551-1');
-</script>
+			  gtag('config', 'UA-114835551-1');
+			</script>
 
-		</body>
 		</center>
+	</body>
 </html>
