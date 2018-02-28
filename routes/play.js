@@ -24,7 +24,13 @@ var workData = require ("../workdata.json");
 // })
 
 exports.view = function(req, res){
+	playData["viewAlt"] = false;
   	console.log(playData);
   	res.render('play', playData);
 };
 
+exports.viewAlt = function(req, res){
+	playData["viewAlt"] = true;
+  	console.log(playData);
+  	res.render('play', playData);
+};

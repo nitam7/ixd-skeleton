@@ -1,6 +1,22 @@
+
+
+
 function completeTask (){
     done = true;
+    if (altView == true) {
+        setTimeout(function(){  
+                    var r = confirm("Good Job! Click Ok to see Diary results or Cancel to go Home!");
+                    if (r == true) {
+                        window.location.href = "./diary";
+                    } else {
+                        window.location.href = "./index";
+                    }
+        }, 10);
+
+    }
+    else {
     setTimeout(function(){ alert("Good job! Go Home and rest"); }, 2000);
+    }
 	var percentage = productivityWidth;
 	//localStorage.setItem("percent", percentage);
 

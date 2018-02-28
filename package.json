@@ -12,6 +12,7 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "alertify.js": "^1.0.12",
     "express": "3.x",
     "express3-handlebars": "*",
     "jquery": "^3.3.1",
