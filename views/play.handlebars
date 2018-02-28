@@ -76,8 +76,8 @@
 			var off = true;
 
 			var totalTime = processInput();
+			var count = totalTime/100;
 			var productivityWidth = 100;
-			var timeNotFocus = 0;
 
 			function processInput() {
 				//get user's minute and hour input
@@ -93,13 +93,12 @@
 
 			function move() {
 				//get the total time from this function into variable time
-				var time = totalTime;
 				//make that progress bar move
 				var elem = document.getElementById("progressBar");
+				var elem2 = document.getElementById("productivityBar");
 				var width = 1;
 
 				//divide the total time into percentage, which is out of 100
-				var count = time/100;
 				
 				//visual movement
 				var id = setInterval(frame, count);
@@ -112,37 +111,16 @@
 						elem.style.width = width + '%';
 						elem.innerHTML = width * 1 + '%';
 					}
-				}
-			}
-
-			//calculate total productivity time. Should be 100% initially, then decrease if the user is not being producitive
-			function calculate() {
-				var time = totalTime;
-				var elem = document.getElementById("productivityBar");
-				console.log("Productivity start ", productivityWidth);
-				if(document.hasFocus() == false){
-					setInterval (function() {
-						timeNotFocus += 1000;
-					}, 1000);
-					var count = time/100;
-					var id = setInterval(frame, count);
-					function frame() {
-						if (productivityWidth <= 0) {
-							clearInterval(id);
-						} else if (document.hasFocus()) {
-							clearInterval(id);
-						} else {
-							console.log("Productivity when no Focus", productivityWidth);
-							--productivityWidth;
-							console.log("timeNotFocus = " + timeNotFocus);
-							elem.style.width = productivityWidth + '%';
-							elem.innerHTML = productivityWidth * 1 + '%';
-							console.log("Productivity after decrement", productivityWidth);
-							
-						}
+					if (document.hasFocus() == false && productivityWidth >= 0) {
+						productivityWidth--;
+                            elem2.style.width = productivityWidth + '%';
+                            elem2.innerHTML = productivityWidth * 1 + '%';
+                            
 					}
 				}
 			}
+
+
 					
 						
 						var animalUrl = localStorage.getItem("animalUrl");
@@ -211,7 +189,6 @@
 				   			imgCont.src = sadPicPaths[i]; 
 				   			off = true;
 				   			//offPage();
-				   			calculate();
 				   			}
 				   			
 

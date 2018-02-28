@@ -1,4 +1,20 @@
-
+//calculate total productivity time. Should be 100% initially, then decrease if the user is not being producitive
+            // function calculate() {
+            //     var elem = document.getElementById("productivityBar");
+            //         var id2 = setInterval(decrease, count);
+            //         function decrease() {
+            //             if (productivityWidth <= 0) {
+            //                 clearInterval(id2);
+            //             } else if (document.hasFocus()) {
+            //                 clearInterval(id2);
+            //             } else {
+            //                 productivityWidth--;
+            //                 elem.style.width = productivityWidth + '%';
+            //                 elem.innerHTML = productivityWidth * 1 + '%';
+                            
+            //             }
+            //     }
+            // }
 
 
 function completeTask (){
