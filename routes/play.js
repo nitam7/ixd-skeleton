@@ -28,3 +28,7 @@ exports.view = function(req, res){
   	res.render('play', playData);
 };
 
+exports.viewAlt = function(req, res){
+  	console.log(playData);
+  	res.render('play', playData);
+};

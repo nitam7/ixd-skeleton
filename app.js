@@ -16,6 +16,9 @@ var choose = require('./routes/choose');
 var diary = require('./routes/entry');
 var options = require('./routes/options');
 var play = require('./routes/play');
+var viewAlt = require('./routes/play');
+
+
 var welcome = require('./routes/welcome');
 var login = require('./routes/login');
 var nameFriend = require('./routes/nameFriend');
@@ -47,6 +50,9 @@ app.get('/', welcome.view); //TODO index.view
 app.get('/diary', diary.view);
 app.get('/options', options.view);
 app.get('/play', play.view);
+app.get('/viewAlt', play.viewAlt);
+
+
 app.get('/choose', choose.view);
 
 //app.get('/welcome', welcome.view);
