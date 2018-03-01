@@ -31,7 +31,10 @@ function completeTask (){
 
     }
     else {
-    setTimeout(function(){ alert("Good job! Go Home and rest"); }, 2000);
+    setTimeout(function(){ alert("Good job! Go Home and rest"); 
+                    window.location.href = "./index";
+                    
+        }, 10);
     }
 	var percentage = productivityWidth;
 	//localStorage.setItem("percent", percentage);
