@@ -26,7 +26,7 @@ var workData = require ("../workdata.json");
 exports.view = function(req, res){
 	//playData["viewAlt"] = false;
   	console.log(playData);
-  	res.render('play', playData);
+  	res.render('playAlt', playData);
 };
 
 // exports.viewAlt = function(req, res){
