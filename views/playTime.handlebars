@@ -10,20 +10,32 @@
 		<a href ="./index"><i class ="fa fa-home fa-3x"></i></a>
 		<center>
 			<h1>Enter Time To Play</h1>
-		<form action = "./play" method ="GET">
+		<form  method ="post" action = "./playAlt">
 				Hours : Minutes<br><br>
 				<table>
 					<tr>
-						<td><input type ="number" name="hours" placeholder = "Hours" required></td>
+						<td><input type ="number" name ="hours" id ="hrs" placeholder ="Hours" required></td>
 						<td><p> : </p></td>
-						<td><input type ="number" name="minutes" placeholder = "Minutes" required></td>
+						<td><input type ="number" name ="minutes" id ="mins" placeholder ="Minutes" required></td>
 					</tr>
 				</table>
 				<br>
 				<br>
 				<br>
 				<br>
-				<input type ="submit" value = "Play">
+				<input type ="submit" value = "Play" onclick = "store()">
+
+				<script type ="text/javascript">
+						function store() {
+							var hour = document.getElementById("hrs");
+							sessionStorage.setItem("hrs", hour.value);
+							var minute = document.getElementById("mins");
+							sessionStorage.setItem("mins", minute.value);
+
+						}
+					
+				</script>
+
 				<h6>Note: Type "0" for any fields you want to leave empty.</h6>
 		</form>
 
