@@ -117,8 +117,6 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 				//convert the given input into milliseconds
 				total = (h * 3600000) + (m * 60000);
 				//return the total time in milliseconds
-				sessionStorage.removeItem("hrs");
-				sessionStorage.removeItem("mins");
 				return total;
 			}
 

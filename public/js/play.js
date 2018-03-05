@@ -59,6 +59,9 @@ function completeTask (){
         a.push(percentage);
         localStorage.setItem("percent", JSON.stringify(a));
         console.log(localStorage.getItem("percent"));
+        
+        sessionStorage.removeItem("hrs");
+        sessionStorage.removeItem("mins");
 
 
      // writeJSON();
