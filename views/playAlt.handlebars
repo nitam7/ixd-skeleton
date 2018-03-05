@@ -104,14 +104,18 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
 			function processInput() {
 				//get user's minute and hour input
-				var str = location.search;
+				var h = sessionStorage.getItem("hrs");
+				var m = sessionStorage.getItem("mins");
+				/*var str = location.search;
 				var hours = str.substring(str.indexOf("=") + 1, str.indexOf("&"));
-				var minutes = str.substring(str.lastIndexOf("=") + 1);
+				var minutes = str.substring(str.lastIndexOf("=") + 1);*/
 
 				//convert the given input into milliseconds
-				var totalTime = (hours * 3600000) + (minutes * 60000);
+				total = (h * 3600000) + (m * 60000);
 				//return the total time in milliseconds
-				return totalTime;
+				sessionStorage.removeItem("hrs");
+				sessionStorage.removeItem("mins");
+				return total;
 			}
 
 			function move() {
