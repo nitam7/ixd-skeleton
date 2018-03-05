@@ -52,6 +52,8 @@ app.get('/diary', diary.view);
 app.get('/options', options.view);
 app.get('/play', play.view);
 app.get('/playAlt', playAlt.view);
+app.post('/play', play.view);
+app.post('/playAlt', playAlt.view);
 //app.get('/viewAlt', play.viewAlt);
 
 
