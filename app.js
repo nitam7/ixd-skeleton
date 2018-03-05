@@ -54,6 +54,7 @@ app.get('/play', play.view);
 app.get('/playAlt', playAlt.view);
 app.post('/play', play.view);
 app.post('/playAlt', playAlt.view);
+app.post('/index', index.view);
 //app.get('/viewAlt', play.viewAlt);
 
 
