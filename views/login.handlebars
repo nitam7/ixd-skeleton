@@ -13,6 +13,14 @@
 	<body>
 		<br>
 		<h4>Sign in to Facebook</h4>
+		<script>
+			console.log(localStorage.getItem("logged"));
+			if (sessionStorage.getItem("logged") == true) {
+				$(".facebookLogin").hide();
+				$(".signingIn").hide();
+				$(".signingUp").hide();
+			}
+		</script>
 		<p class="facebookLogin">
 			<br>
 				<fb:login-button scope ="public_profile,email" onlogin ="checkLoginState();" width="300px">
@@ -21,7 +29,7 @@
 		
 		<div class ="signingIn">
 			<h4>Sign in with email:</h4>
-			<button id = "signIn">Sign In with Email</button>
+			<button id = "signIn">Sign In</button>
 			<script type="text/javascript">
 				document.getElementById("signIn").onclick = function () {
 					location.href = "./newAccount";
@@ -31,7 +39,7 @@
 		<br>
 		<div class = "signingUp">
 			<h4>No account?</h4>
-			<button id = "signUp">Sign Up with Email:</button>
+			<button id = "signUp">Sign Up</button>
 			<script type="text/javascript">
 				document.getElementById("signUp").onclick = function () {
 					location.href = "./newAccount";

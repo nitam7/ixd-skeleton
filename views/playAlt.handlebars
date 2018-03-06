@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<link href ="/css/general.css" rel="stylesheet">
+	<link href ="/css/play.css" rel ="stylesheet">
+	<script defer src = "/js/fontawesome-all.js"></script>
+	<script src = "/js/playAlt.js"></script>
+	<script src = "/js/require.js"></script>
+	<!--<script src="{PATH}/alertify.js"></script>-->
+	<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+
+	<head>
+
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-114835551-1', 'auto'); //Swap out UA-XXXXX-Y with your GA tracking id
+ga('send', 'pageview'); </script> 
+<!-- End Google Analytics -->
+	
+
+
+		<title>FocusFriend</title>
+		
+
+	</head>
+	<body>
+	<div class ="container">
+		<a href ="./index"><i class ="fa fa-home fa-2x"></i></a>
+		<center>
+		<h1>Focus Together!</h1>
+			
+				
+
+				{{#with animals.[0]}}
+						<img id ="image" src ="{{imageURL}}"/>
+				{{/with}} 
+
+			{{#if viewAlt}}
+							<script type="text/javascript">
+								altView = true;
+							</script>
+			{{else}}
+							<script type="text/javascript">
+								altView = false;
+							</script>
+			{{/if}}
+		
+
+			<!-- timer implemented below -->			
+			<p id="demo"></p>
+
+			<!-- PROGRESS BAR PRODUCTIVITY-->
+			<br>
+			<h4>Productivity</h4>
+			<div id ="productivityProgress">
+				<div id ="productivityBar">100%</div>
+			</div>
+			<br>
+			<br>
+			<br>
+
+			<!-- PROGRESS BAR TIME-->
+			<h4>Progress</h4>
+			<div id ="userProgress">
+				<div id ="progressBar">0%</div>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<button id="clickButton" onclick ="move();">Begin Session</button>
+
+			<script type="text/javascript">
+				$(document).ready(function(){
+					console.log("triggered");
+				    $("#clickButton").trigger('click'); 
+				    $("#clickButton").hide();
+				});
+			</script>
+
+ 		
+			<script>
+
+			var done = false;
+			var off = true;
+
+			var totalTime = processInput();
+			var count = totalTime/100;
+			var productivityWidth = 100;
+
+			function processInput() {
+				//get user's minute and hour input
+				var h = sessionStorage.getItem("hrs");
+				var m = sessionStorage.getItem("mins");
+				/*var str = location.search;
+				var hours = str.substring(str.indexOf("=") + 1, str.indexOf("&"));
+				var minutes = str.substring(str.lastIndexOf("=") + 1);*/
+
+				//convert the given input into milliseconds
+				total = (h * 3600000) + (m * 60000);
+				//return the total time in milliseconds
+				sessionStorage.removeItem("hrs");
+				sessionStorage.removeItem("mins");
+				return total;
+			}
+
+			function move() {
+				//get the total time from this function into variable time
+				//make that progress bar move
+				var elem = document.getElementById("progressBar");
+				var elem2 = document.getElementById("productivityBar");
+				var width = 1;
+
+				//divide the total time into percentage, which is out of 100
+				
+				//visual movement
+				var id = setInterval(frame, count);
+				function frame() {
+					if (width >= 100) {
+						clearInterval(id);
+						completeTask();
+					} else {
+						width++;
+						elem.style.width = width + '%';
+						elem.innerHTML = width * 1 + '%';
+					}
+					if (document.hasFocus() == false && productivityWidth >= 0) {
+						productivityWidth--;
+                            elem2.style.width = productivityWidth + '%';
+                            elem2.innerHTML = productivityWidth * 1 + '%';
+                            
+					}
+				}
+			}
+
+
+					
+						
+						var animalUrl = localStorage.getItem("animalUrl");
+						var split = animalUrl.split("/");
+						console.log(split[4]);
+					
+						//logic to set picPaths
+			  			 if ((split[4] == "DogHouse.png")||(split[4] == null)||(split[4] == undefined)) {
+			  			 	var picPaths = ['./images/Happy1.png','./images/Happy2.png','./images/DogHappy3.png','/images/DogHappy4.png','/images/DogHappy5.png']
+			  			 	var sadPicPaths = ['./images/Sad.png','./images/DogSad2.png','./images/DogSad3.png']
+			  			 
+			  			 }
+			  			  if (split[4] == "BearHouse.png") {
+			  			  	var picPaths = ['./images/BearHappy1.png','./images/BearHappy2.png','./images/BearHappy3.png','./images/BearHappy4.png','./images/BearHappy5.png']
+			  			  	var sadPicPaths = ['./images/BearSad1.png','./images/BearSad2.png','./images/BearSad3.png']
+			  			 
+			  			 }
+			  			  if (split[4] == "PigHouse.png") {
+			  			  		var picPaths = ['./images/PigHappy1.png','./images/PigHappy2.png','./images/PigHappy3.png','./images/PigHappy4.png','./images/PigHappy5.png']
+			  			  		var sadPicPaths = ['./images/PigSad1.png','./images/PigSad2.png','./images/PigSad3.png']
+			  			 	 	
+			  			 }
+			  			 if (split[4] == "TigerHouse.png")  {
+			  			  	var picPaths = ['./images/TigerHappy1.png','./images/TigerHappy2.png','./images/TigerHappy3.png','./images/TigerHappy4.png','./images/TigerHappy5.png']
+			  			  	var sadPicPaths = ['./images/TigerSad1.png','./images/TigerSad2.png','./images/TigerSad3.png']
+
+			  			 }
+			  		
+						setInterval("myFunction()", 10);
+						
+
+
+						
+					function myFunction() {
+				    	if(document.hasFocus()) {
+				    	off = false;
+				    	var time = processInput();
+						//about enough to get through all images, will change magic number to size of picpath later
+						var stagger = (time/5) + 2000;
+		
+			            var curPic = -1;
+			            //preload the images for smooth animation
+			            var imgO = new Array();
+			            for(i=0; i < picPaths.length; i++) {
+			                imgO[i] = new Image();
+			                imgO[i].src = picPaths[i];
+			            }
+
+			            function swapImage() {
+			                curPic = (++curPic > picPaths.length-1)? 0 : curPic;
+			                imgCont.src = imgO[curPic].src;
+			                setTimeout(swapImage,stagger);
+			            }
+
+			            window.onload=function() {
+			                imgCont = document.getElementById('image');
+			                swapImage();
+			            	}
+
+			        	}
+
+
+				   		else if (done == false){
+				   			imgCont = document.getElementById('image');
+				   			for (i=0; i < sadPicPaths.length; i++) {
+				   			imgCont.src = sadPicPaths[i]; 
+				   			off = true;
+				   			//offPage();
+				   			}
+				   			
+
+
+				   			
+							//setInterval(function() {imgCont.src = "./images/Sad.png"}, 10);
+						
+						}
+					}
+
+					// function offPage () {
+					// if (done == false && off == true) {
+					// 	setTimeout(function(){ alert("Your friend became sad when you lost focus");}, 2000);
+					// 	clearTimeout();
+					// 	off = false;
+					// 	}
+					// }
+
+			
+
+			</script>
+
+			<br>
+			<br>
+
+		
+
+			
+	</body>
+	</center>
+	</div>
+</html>

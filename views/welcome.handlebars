@@ -2,10 +2,13 @@
 	<link href ="/css/general.css" rel="stylesheet">
 	<link href ="/css/welcome.css" rel="stylesheet">
 	<script defer src = "/js/fontawesome-all.js"></script>
-	<div class = "container">
 	<head>
 	
 				<title>Welcome Screen</title>
+		
+	</head>
+	<body>
+	<div class = "container">
 		<center>
 			<h1>Welcome to Focus Friend</h1>
 			<p>
@@ -27,9 +30,21 @@
     			document.getElementById("choose").onclick = function () {
         			location.href = "./choose";
     			};
+
+    			var a = []
+    			localStorage.setItem("percent", JSON.stringify(a));
+        		a.push(JSON.parse(localStorage.getItem("percent")));
+        		console.log(localStorage.getItem("percent"));
+
+       			// 	var date = new Date();
+        		// 	var days = ["Sun", "M", "T", "W", "Th", "F", "Sat"];
+        		// 	var dayToday = days[date.getDay()];
+
+        		// var d = dayToday
+        		// localStorage.setItem("day", dayToday);
+        		// console.log(localStorage.getItem("day"));
 			</script>
-	</head>
-	<body>
+		</center>
 	</body>
 	</div>
 </html>

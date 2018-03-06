@@ -8,9 +8,10 @@ function changeUser(response) {
 	$(".facebookLogin").hide();
 	$("h4:first").text(response.name);
 	$(".signingIn").hide();
-	$("signingUp").hide();
+	$(".signingUp").hide();
 	alert("You are logged in as: " + response.name);
 	location.href = "./index";
+	sessionStorage.setItem("logged", "true");
 }
 
 function statusChangeCallback(response) {
