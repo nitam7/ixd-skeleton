@@ -8,3 +8,8 @@ button {
 	font-size: 2em;
 
 }
+
+#diary {
+	float: right;
+	margin-right: 15px;
+}
