@@ -1,5 +1,6 @@
 .animal {
+	min-width:500px;
 	height:500px
     width:auto;/*maintain aspect ratio*/
-	max-width: 400px;
+	max-width: 500px;
 }
