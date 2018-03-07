@@ -1,6 +1,17 @@
-img {
+@media screen and (max-width: 480px) {
+
+  div#animal {
+    max-width: 100%;
+    overflow:hidden;
+  }
+  img {
+    max-width: 100%;
+  }
+
+}
+
+/*img {
 	min-width:500px;
 	height:500px
-    width:auto;/*maintain aspect ratio*/
-
- }
+    width:auto;/*maintain aspect ratio
+    }*/
