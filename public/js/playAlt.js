@@ -19,14 +19,26 @@
 
 function completeTask (){
     done = true;
-        setTimeout(function(){  
-                    var r = confirm("Good Job! Click Ok to see Diary results or Cancel to go Home!");
-                    if (r == true) {
-                        window.location.href = "./diary";
-                    } else {
-                        window.location.href = "./index";
-                    }
+
+        setTimeout(function () {
+            var alert = alertify.confirm("Good job!").setting({
+                'labels' : {ok : 'Diary', cancel : 'Go Home'},
+                'onok' : function () {
+                    window.location.href ="./diary";
+                },
+                'oncancel' : function () {
+                    window.location.href ="./index";
+                }
+            }).show();
         }, 10);
+        // setTimeout(function(){  
+        //             var r = confirm("Good Job! Click Ok to see Diary results or Cancel to go Home!");
+        //             if (r == true) {
+        //                 window.location.href = "./diary";
+        //             } else {
+        //                 window.location.href = "./index";
+        //             }
+        // }, 10);
 
 	var percentage = productivityWidth;
 	//localStorage.setItem("percent", percentage);
@@ -55,6 +67,7 @@ function completeTask (){
 
      // writeJSON();
  }
+
 
 
 

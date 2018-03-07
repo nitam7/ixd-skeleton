@@ -19,6 +19,15 @@
 
 function completeTask (){
     done = true;
+
+    setTimeout(function () {
+            var alert = alertify.alert("Good job! Go home and rest!").setting({
+                'label' : 'Go home',
+                'onok' : function () {
+                    window.location.href ="./index";
+                }
+            }).show();
+        }, 10);
     // if (altView == true) {
     //     setTimeout(function(){  
     //                 var r = confirm("Good Job! Click Ok to see Diary results or Cancel to go Home!");
@@ -31,10 +40,10 @@ function completeTask (){
 
     // }
     // else {
-    setTimeout(function(){ alert("Good job! Go Home and rest"); 
-                    window.location.href = "./index";
+    // setTimeout(function(){ alert("Good job! Go Home and rest"); 
+    //                 window.location.href = "./index";
                     
-        }, 10);
+        //}, 10);
     //}
 	var percentage = productivityWidth;
 	//localStorage.setItem("percent", percentage);
