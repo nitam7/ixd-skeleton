@@ -21,7 +21,7 @@ function completeTask (){
     done = true;
 
     setTimeout(function () {
-            var alert = alertify.alert("Good job! Go home and rest!").setting({
+            var alert = alertify.alert("Good job! Go home and rest.").setting({
                 'label' : 'Go home',
                 'onok' : function () {
                     window.location.href ="./index";

@@ -21,7 +21,7 @@ function completeTask (){
     done = true;
 
         setTimeout(function () {
-            var alert = alertify.confirm("Good job!").setting({
+            var alert = alertify.confirm("Good job! Click below to either see your diary results, or go home.").setting({
                 'labels' : {ok : 'Diary', cancel : 'Go Home'},
                 'onok' : function () {
                     window.location.href ="./diary";
