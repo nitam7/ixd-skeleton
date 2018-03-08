@@ -12,25 +12,33 @@
 		<a href ="./index"><i class ="fa fa-home fa-3x"></i></a>
 		<center>
 			<h1>Enter Time To Play</h1>
-			<form id="playAction" method ="post" action = "./playAlt">
+			<form name="playTime" id="playAction" method ="post" action = "./playAlt">
 				Hours : Minutes<br><br>
 				<table>
 					<tr>
-						<td><input type ="number" name ="hours" id ="hrs" placeholder ="Hours" required></td>
+						<td><input type ="number" name ="hours" id ="hrs" placeholder ="Hours"></td>
 						<td><p> : </p></td>
-						<td><input type ="number" name ="minutes" id ="mins" placeholder ="Minutes" required></td>
+						<td><input type ="number" name ="minutes" id ="mins" placeholder ="Minutes"></td>
 					</tr>
 				</table>
 				<br>
 				<br>
-				<input type ="submit" value = "Begin" onclick = "store()">
+				<input type ="button" value = "Begin" onclick = "validateStore()">
 
 				<script type ="text/javascript">
-						function store() {
-							var hour = document.getElementById("hrs");
-							sessionStorage.setItem("hrs", hour.value);
-							var minute = document.getElementById("mins");
-							sessionStorage.setItem("mins", minute.value);
+						function validateStore() {
+							if (playTime.hours.value == '' && playTime.minutes.value == '') {
+								alert("Enter in either hours or minutes!");
+							} else if ((playTime.hours.value == '0' && (playTime.minutes.value == '0' || playTime.minutes.value == '')) || (playTime.minutes.value == '0' && (playTime.hours.value == '0' || playTime.hours.value == ''))) {
+								alert("Enter a nonzero time!");
+							} else {
+								var hour = document.getElementById("hrs");
+								var minute = document.getElementById("mins");
+
+								sessionStorage.setItem("hrs", hour.value);
+								sessionStorage.setItem("mins", minute.value);
+								playTime.submit();
+							}
 
 						}
 					

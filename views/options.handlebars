@@ -2,6 +2,7 @@
 	<link href ="/css/general.css" rel ="stylesheet">
 	<link href ="/css/options.css" rel ="stylesheet">
 	<script defer src = "/js/fontawesome-all.js"></script>
+	<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 	<head>
 		<title>FocusFriend</title>
 	</head>
@@ -16,15 +17,21 @@
 				<script src="/js/facebook.js"></script>
 
 				<center>
-				<button id = "logout">Log Out</button>
+				<button id = "logout" onclick="logout();">Log Out</button>
 				</center>
 
 				<script type ="text/javascript">
-					sessionStorage.removeItem("logged");
-					sessionStorage.setItem("logged", "false");
-					document.getElementById("logout").onclick = function () {
-						location.href = "/";
-					};
+					console.log(JSON.parse(sessionStorage.getItem("logged")));
+					if (sessionStorage.getItem("logged") == "false") {
+						$("#logout").hide();
+					}
+					function logout() {
+						sessionStorage.removeItem("logged");
+						sessionStorage.setItem("logged", "false");
+						document.getElementById("logout").onclick = function () {
+							location.href = "/";
+						};
+					}
 				</script>
 		</center>
 	</body>

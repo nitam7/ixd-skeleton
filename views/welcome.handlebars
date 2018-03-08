@@ -33,6 +33,7 @@
 
     			var a = []
     			localStorage.setItem("percent", JSON.stringify(a));
+    			sessionStorage.setItem("logged", "false");
         		a.push(JSON.parse(localStorage.getItem("percent")));
         		console.log(localStorage.getItem("percent"));
 

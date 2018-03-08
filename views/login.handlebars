@@ -14,7 +14,7 @@
 		<br>
 		<h4>Sign in to Facebook</h4>
 		<script>
-			console.log(localStorage.getItem("logged"));
+			console.log(sessionStorage.getItem("logged"));
 			if (sessionStorage.getItem("logged") == true) {
 				$(".facebookLogin").hide();
 				$(".signingIn").hide();
