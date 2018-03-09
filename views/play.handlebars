@@ -29,17 +29,6 @@
 						<img id ="image" src ="{{imageURL}}"/>
 				{{/with}} 
 
-<!-- 			{{#if viewAlt}}
-							<script type="text/javascript">
-								altView = true;
-							</script>
-			{{else}}
-							<script type="text/javascript">
-								altView = false;
-							</script>
-			{{/if}} -->
-		
-
 			<!-- timer implemented below -->			
 			<p id="demo"></p>
 
@@ -69,6 +58,27 @@
 				    $("#clickButton").trigger('click'); 
 				    $("#clickButton").hide();
 				});
+//an attempt to get the timer to stay accurate when screen turns off 
+				function getTime() {
+		            return (new Date()).getTime();
+		        }
+
+		        var lastInterval = getTime();
+
+		        function screenOffDifference() {
+		            var now = getTime();
+		            var diff = now - lastInterval;
+		            var offBy = diff - 1000; // 1000 = the 1 second delay I was expecting
+		            lastInterval = now;
+
+		            if(offBy > 100) { // don't trigger on small stutters less than 100ms
+		                console.log('screen - off by ' + offBy + 'ms');
+		            }
+		        }
+
+
+				setInterval(screenOffDifference, 1000);  
+
 			</script>
 
  		
