@@ -1,0 +1,15 @@
+.footnote p {
+	font-size: 2rem;
+}
+
+input[type=button] {
+	font-family: CaviarDreams;
+	src: url(/fonts/CaviarDreams.ttf);
+	width: 60rem;
+	height: 10rem;
+	background-color: #ffffff;
+	color: #5BAE5E;
+	border: 0.2rem solid #5BAE5E;
+	border-radius: 1rem;
+	font-size: 5rem;
+}

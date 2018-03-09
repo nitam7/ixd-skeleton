@@ -5,15 +5,8 @@
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 	<head>
 		<!-- Google Analytics -->
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-114835551-1', 'auto'); //Swap out UA-XXXXX-Y with your GA tracking id
-ga('send', 'pageview'); </script> 
-<!-- End Google Analytics -->
+
 		<!--chart stuff-->
 
 		<title>FocusFriend</title>
@@ -23,13 +16,12 @@ ga('send', 'pageview'); </script>
         <div class = "container">
         <a href ="./index"><i class ="fa fa-home fa-1x"></i></a>
         <center>
-            <h1>Progress</h1>
+            <h2>Progress</h2>
         </center>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="/js/highcharts.js"></script>
         <script src="/js/annotations.js"></script>
-		<script src="/js/exporting.js"></script>
 
 		<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
@@ -67,8 +59,10 @@ Highcharts.chart('container', {
         categories: ['1', '2', '3', '4', '5']
     },
     yAxis: {
+        min: 0,
+        max: 100,
         title: {
-            text: 'Percentage'
+            text: 'Percentage',
         }
     },
     plotOptions: {

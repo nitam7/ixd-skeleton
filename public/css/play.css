@@ -35,3 +35,7 @@ body {
 	float:left;
 	color: #2722838;
 }
+
+.alertify {
+	min-height:500px;
+}

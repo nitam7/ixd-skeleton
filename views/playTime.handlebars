@@ -1,6 +1,8 @@
 <html>
 	<link href ="/css/general.css" rel="stylesheet">
+	<link href ="/css/playTime.css" rel="stylesheet">
 	<script defer src = "/js/fontawesome-all.js"></script>
+	<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 	<head>
 	
 				<title>Welcome Screen</title>
@@ -10,43 +12,58 @@
 		<a href ="./index"><i class ="fa fa-home fa-3x"></i></a>
 		<center>
 			<h1>Enter Time To Play</h1>
-		<form  method ="post" action = "./playAlt">
+			<form name="playTime" id="playAction" method ="post" action = "./playAlt">
 				Hours : Minutes<br><br>
 				<table>
 					<tr>
-						<td><input type ="number" name ="hours" id ="hrs" placeholder ="Hours" required></td>
+						<td><input type ="number" name ="hours" id ="hrs" placeholder ="Hours"></td>
 						<td><p> : </p></td>
-						<td><input type ="number" name ="minutes" id ="mins" placeholder ="Minutes" required></td>
+						<td><input type ="number" name ="minutes" id ="mins" placeholder ="Minutes"></td>
 					</tr>
 				</table>
 				<br>
 				<br>
-				<br>
-				<br>
-				<input type ="submit" value = "Play" onclick = "store()">
+				<input type ="button" value = "Begin" onclick = "validateStore()">
 
 				<script type ="text/javascript">
-						function store() {
-							var hour = document.getElementById("hrs");
-							sessionStorage.setItem("hrs", hour.value);
-							var minute = document.getElementById("mins");
-							sessionStorage.setItem("mins", minute.value);
+						function validateStore() {
+							if (playTime.hours.value == '' && playTime.minutes.value == '') {
+								alert("Enter in either hours or minutes!");
+							} else if ((playTime.hours.value == '0' && (playTime.minutes.value == '0' || playTime.minutes.value == '')) || (playTime.minutes.value == '0' && (playTime.hours.value == '0' || playTime.hours.value == ''))) {
+								alert("Enter a nonzero time!");
+							} else {
+								var hour = document.getElementById("hrs");
+								var minute = document.getElementById("mins");
+
+								sessionStorage.setItem("hrs", hour.value);
+								sessionStorage.setItem("mins", minute.value);
+								playTime.submit();
+							}
 
 						}
 					
 				</script>
-
-				<h6>Note: Type "0" for any fields you want to leave empty.</h6>
+				<br>
+				<br>
+				<a>Your animal friend is here to help you focus mindfully:<br/></a>
+				<br>
+				<a>- Keep this screen open and they will be happy!<br/></a>
+				<a>- When you leave they become sad, but will be happy that you're working again when you get back!</a>
+				<br>
+				<br>
+				<div class = "footnote">
+				</div>
+				
 		</form>
-
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114835551-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	$(document).ready(function () {
+		let rando = Math.random() * 100;
 
-  gtag('config', 'UA-114835551-1');
+		if (Math.floor(rando) % 2 == 0) {
+			$('#playAction').prop('action', './play');
+		}
+	});
+
 </script>
 
 	</body>
